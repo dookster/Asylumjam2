@@ -1,0 +1,36 @@
+Plot:
+
+- Teacher drives to private school late at night to 'fix' something in paperwork due next day for a newly enrolled student.
+- Teacher recognizes student's family name as one causing a lot of trouble before her time, clearly the teacher dislikes these people and think they shold stick to themselves.
+- Choosing different radio channels gives different small stories
+  - Starts with some old time music
+  - Talk radio 1 - debate about enrolling 'outsider' children again
+  - Talk radio 2 - religious channel ranting about god in an unsettling way, describing the appearance of their god
+  - Off: the teacher thinks about recurring nightmares about the scool at night, class rooms empty, teacher desks are all monoliths, always one door that wont open.
+
+- Arriving at school. Most doors open, (just explain away doors the player can't enter like the cafeteria)
+- Has to find papers at the office at the center of the small school. 
+- The papers mention a relative being enrolled years ago, but copies of this persons records are missing
+- There's a file cabinet that can be searched by input, player inputs family name but nothing comes up 
+  , the teacher figures there'd be other remains of the relative at the school if they really went here
+- The player should find the library where a pile of old student essays and similar are searchable as well, find
+  an essay written by a relative to the new student. longer story about growing up with friends who grow stranger, acting weird, changing appearance though no one else will acknowledge this. Some class mates change so much they get new chairs in class, but teachers and parents refuse to talk about it. Class mates disappear with weird stories given as excuse. Mentioning a class room number that doesn't exist. Story ends when the student author notices changes herself. (Lets player know there is a missing class room they should look for, inner monologue drives the plot here... there's no other real motive)
+
+- Player falls asleep, dreams the mentioned recurring nightmare, same locations with different lighting (some doors locked/blocked?), all classrooms empty with monoliths for teacher desks, (somehow guide player to visit all/most class rooms before end?)  strange ambient sounds, leads player to basement door, in the dream it has the missing class room number on it. (after visiting all class rooms the ambience changes and a light turns on above the cellar door, lighting the room number) Player turns around from basement door to see a landscape with only rows of monoliths, ambience grows louder and player awakes in the library.
+
+- Awake again the player goes to the basement. Going to basement door reveals nothing at first, listening to the door will reveal a tapping, clearly morse code, player mentions not knowing morse code.
+- Morse code alphabet can be found at libray by searching for it. Reveals number of teacher's lounge locker and combination lock (Teacher's lounge lockers are the only ones with clearly mentioned numbers, should guide the player there). 
+- Locker is old and dusty, clearly not been used in years, contains a key for the basement.
+- Basement is old, dusty, a simple classroom just like all the others. 
+
+
+
+
+
+* Enter school
+* Go to office
+* Find papers, see relative missing
+* Search for family information in file cabinet (school records)
+* Go to library, search for school work by family name
+* find diary assignment for relative, 
+  

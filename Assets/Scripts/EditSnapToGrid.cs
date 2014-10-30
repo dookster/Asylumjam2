@@ -8,7 +8,7 @@ using System.Collections;
 [ExecuteInEditMode]
 public class EditSnapToGrid : MonoBehaviour {
 
-	public float snapValue = 1;
+	public float snapValue = 2;
 	public float depth = 0;
 
 	// Use this for initialization
