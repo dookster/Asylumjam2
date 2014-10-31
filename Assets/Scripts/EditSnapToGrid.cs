@@ -27,4 +27,7 @@ public class EditSnapToGrid : MonoBehaviour {
 
 		transform.position = new Vector3(x, y, z);
 	}
+
+
+
 }

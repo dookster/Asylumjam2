@@ -32,4 +32,35 @@ public class TileBase : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	/**
+	 * Draw gizmos showing blocked directions
+	 */
+	void OnDrawGizmos() {
+		float drawHeight = 0;
+
+		float wallWidth = 0.2f;
+		float halfSize = transform.localScale.x /2;
+
+		Vector3 top = new Vector3(transform.position.x, drawHeight, transform.position.z + halfSize);
+		Vector3 bottom = new Vector3(transform.position.x, drawHeight, transform.position.z - halfSize);
+		Vector3 right = new Vector3(transform.position.x + halfSize, drawHeight, transform.position.z);
+		Vector3 left = new Vector3(transform.position.x - halfSize, drawHeight, transform.position.z);
+
+		Gizmos.color = Color.red;
+
+		if(blockNorth)
+			Gizmos.DrawCube(top, new Vector3(halfSize * 2, halfSize * 2, wallWidth));
+		if(blockSouth)
+			Gizmos.DrawCube(bottom, new Vector3(halfSize * 2, halfSize * 2, wallWidth));
+		if(blockEast)
+			Gizmos.DrawCube(right, new Vector3(wallWidth, halfSize * 2, halfSize * 2));
+		if(blockWest)
+			Gizmos.DrawCube(left, new Vector3(wallWidth, halfSize * 2, halfSize * 2));
+
+		Gizmos.color = Color.cyan;
+		Gizmos.DrawWireCube(transform.position, transform.localScale);
+
+	}
+
 }

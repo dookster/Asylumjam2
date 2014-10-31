@@ -20,6 +20,8 @@ public class Player : MonoBehaviour {
 
 	private int nextMove = -1;
 
+	public TileBase currentTile;
+
 	// Use this for initialization
 	void Start () {
 
@@ -69,15 +71,39 @@ public class Player : MonoBehaviour {
 
 				switch(nextMove){
 				case FORWARD:
-					iTween.MoveBy(gameObject,iTween.Hash("z",2,"time",movementSpeed, "oncomplete", "straightenUp", "oncompletetarget", gameObject));			
+					// Check if forward is blocked here
+					Debug.Log(transform.forward);
+					bool blocked = false;
+					if(Mathf.RoundToInt(transform.forward.z) > 0 && currentTile.blockNorth){
+						blocked = true;
+						Debug.Log("NORTH BLOCKED");
+					}
+
+					if(Mathf.RoundToInt(transform.forward.z) < 0 && currentTile.blockSouth){
+						blocked = true;
+						Debug.Log("SOUTH BLOCKED " + "ct: " + currentTile.blockSouth + " - " + transform.forward.z);
+					}
+
+					if(Mathf.RoundToInt(transform.forward.x) < 0 && currentTile.blockWest){
+						blocked = true;
+						Debug.Log("WEST BLOCKED");
+					}
+
+					if(Mathf.RoundToInt(transform.forward.x) > 0 && currentTile.blockEast){
+						blocked = true;
+						Debug.Log("EAST BLOCKED");
+					}
+
+					if(!blocked)
+						iTween.MoveBy(gameObject,iTween.Hash("z",2,"time",movementSpeed, "oncomplete", "afterMoving", "oncompletetarget", gameObject));			
 					nextMove = -1;
 					break;
 				case LEFT:
-					iTween.RotateBy(gameObject,iTween.Hash("y",-(1f/4f),"time",movementSpeed, "oncomplete", "straightenUp", "oncompletetarget", gameObject));
+					iTween.RotateBy(gameObject,iTween.Hash("y",-(1f/4f),"time",movementSpeed, "oncomplete", "afterMoving", "oncompletetarget", gameObject));
 					nextMove = -1;
 					break;
 				case RIGHT:
-					iTween.RotateBy(gameObject,iTween.Hash("y",(1f/4f),"time",movementSpeed, "oncomplete", "straightenUp", "oncompletetarget", gameObject));
+					iTween.RotateBy(gameObject,iTween.Hash("y",(1f/4f),"time",movementSpeed, "oncomplete", "afterMoving", "oncompletetarget", gameObject));
 					nextMove = -1;
 					break;
 				}
@@ -87,6 +113,21 @@ public class Player : MonoBehaviour {
 			}
 
 		}
+	}
+
+	void OnTriggerEnter(Collider other) {
+
+	}
+
+	void OnTriggerStay(Collider other){
+		currentTile = (TileBase) other.gameObject.GetComponent<TileBase>();
+	}
+
+	private void afterMoving(){
+		straightenUp();
+
+
+
 	}
 
 	/**
