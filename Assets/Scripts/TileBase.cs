@@ -39,6 +39,9 @@ public class TileBase : MonoBehaviour {
 	void OnDrawGizmos() {
 		float drawHeight = 0;
 
+		Gizmos.color = Color.cyan;
+		Gizmos.DrawWireCube(transform.position, transform.localScale);
+
 		float wallWidth = 0.2f;
 		float halfSize = transform.localScale.x /2;
 
@@ -51,15 +54,35 @@ public class TileBase : MonoBehaviour {
 
 		if(blockNorth)
 			Gizmos.DrawCube(top, new Vector3(halfSize * 2, halfSize * 2, wallWidth));
-		if(blockSouth)
-			Gizmos.DrawCube(bottom, new Vector3(halfSize * 2, halfSize * 2, wallWidth));
 		if(blockEast)
 			Gizmos.DrawCube(right, new Vector3(wallWidth, halfSize * 2, halfSize * 2));
+		if(blockSouth)
+			Gizmos.DrawCube(bottom, new Vector3(halfSize * 2, halfSize * 2, wallWidth));
 		if(blockWest)
 			Gizmos.DrawCube(left, new Vector3(wallWidth, halfSize * 2, halfSize * 2));
+	}
 
-		Gizmos.color = Color.cyan;
-		Gizmos.DrawWireCube(transform.position, transform.localScale);
+	public void onLookingNorth(){
+
+	}
+
+	public void onLookingSouth(){
+		
+	}
+
+	public void onLookingEast(){
+		
+	}
+
+	public void onLookingWest(){
+		
+	}
+
+	public void onEnter(){
+
+	}
+
+	public void onExit(){
 
 	}
 

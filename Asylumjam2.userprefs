@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="C:\Program Files (x86)\Twine\targets\sugarcane\header.html">
     <Files>
-      <File FileName="Assets\Scripts\TileBase.cs" Line="62" Column="65" />
+      <File FileName="Assets\Scripts\TileBase.cs" Line="85" Column="23" />
       <File FileName="Assets\Scripts\EditSnapToGrid.cs" Line="31" Column="2" />
-      <File FileName="Assets\Scripts\Player.cs" Line="92" Column="46" />
+      <File FileName="Assets\Scripts\Player.cs" Line="164" Column="92" />
+      <File FileName="C:\Program Files (x86)\Twine\targets\sugarcane\header.html" Line="158" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

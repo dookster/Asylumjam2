@@ -76,22 +76,22 @@ public class Player : MonoBehaviour {
 					bool blocked = false;
 					if(Mathf.RoundToInt(transform.forward.z) > 0 && currentTile.blockNorth){
 						blocked = true;
-						Debug.Log("NORTH BLOCKED");
+						// north
 					}
 
 					if(Mathf.RoundToInt(transform.forward.z) < 0 && currentTile.blockSouth){
 						blocked = true;
-						Debug.Log("SOUTH BLOCKED " + "ct: " + currentTile.blockSouth + " - " + transform.forward.z);
+						// south
 					}
 
 					if(Mathf.RoundToInt(transform.forward.x) < 0 && currentTile.blockWest){
 						blocked = true;
-						Debug.Log("WEST BLOCKED");
+						// west
 					}
 
 					if(Mathf.RoundToInt(transform.forward.x) > 0 && currentTile.blockEast){
 						blocked = true;
-						Debug.Log("EAST BLOCKED");
+						// east
 					}
 
 					if(!blocked)
@@ -152,6 +152,17 @@ public class Player : MonoBehaviour {
 	public void goForward(){
 		if(allowMovement)
 			nextMove = FORWARD;
+	}
+
+
+	void OnDrawGizmos() {
+
+		Gizmos.color = Color.green;
+		Gizmos.DrawCube(transform.position, new Vector3(0.4f, 0.4f, 0.4f));
+
+		//Gizmos.color = Color.magenta;
+		Gizmos.DrawCube(transform.position + (transform.forward/3), new Vector3(0.3f, 0.3f, 0.3f));
+
 	}
 	
 
