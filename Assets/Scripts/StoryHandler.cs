@@ -10,6 +10,24 @@ public class StoryHandler : MonoBehaviour {
 	public const int EVENT_EAST = 4;
 	public const int EVENT_WEST = 5;
 
+	// Quest constants, for keeping track of where we are in the story
+	//public const int Q_FIND_OFFICE 							= 0;
+	//public const int Q_FIND_LIBRARY 						= 20;
+	//public const int Q_NIGHTMARE_VISIT_ALL_CLASSROOMS 		= 40;
+	//public const int Q_REALITY_RETURN_BASEMENT_DOOR 		= 60;
+	//public const int Q_GET_KEY_FROM_LOUNGE_CLOSET	 		= 80;
+	//public const int Q_UNLOCK_BASEMENT				 	= 90;
+
+	public const int Q_FIND_PAPERS							= 10;
+	public const int Q_SEARCH_FOR_FAMILY_NAME				= 30; // read diary/essay
+	public const int Q_NIGHTMARE_FIND_BASEMENT_DOOR 		= 50;
+	public const int Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY = 70;
+	public const int Q_ENTER_BASEMENT				 		= 100;
+	public const int Q_FIND_RELIGIOUS_TEXTS			 		= 110;
+	public const int Q_LEAVE						 		= 120;
+
+	public int currentQuest = -1;
+
 	private Player player;
 
 	// Use this for initialization
@@ -23,6 +41,11 @@ public class StoryHandler : MonoBehaviour {
 	
 	}
 
+	/***********************************************************
+	 * 
+	 * USE
+	 * 
+	 ***********************************************************/
 	public void handleUseEvent(string tileName, int direction){
 		// "EXAMPLE CODE"
 		if(tileName == ""){
@@ -37,8 +60,70 @@ public class StoryHandler : MonoBehaviour {
 				break;
 			}
 		}
+
+
+		if(tileName == "Documents"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				if(currentQuest == Q_FIND_PAPERS){
+					twineDisplay("found documents");
+					currentQuest = Q_SEARCH_FOR_FAMILY_NAME;
+				} else {
+					// repeat look at papers, reminding of name
+				}
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "Index"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				if(currentQuest == Q_SEARCH_FOR_FAMILY_NAME){
+					twineDisplay("library index");
+				} else if(currentQuest == Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY){
+					twineDisplay("library index 2");
+				}
+				else {
+					// let user search for anything without getting any results
+				}
+				break;
+			}
+		}
+
+		if(tileName == "Closet"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				if(currentQuest == Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY){
+					twineDisplay("closet");
+				}
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:			
+				break;
+			}
+		}
 	}
 
+	/***********************************************************
+	 * 
+	 * MOVEMENT
+	 * 
+	 ***********************************************************/
 	public void handleMoveEvent(string tileName, int eventType){
 		// "EXAMPLE CODE"
 		if(tileName == ""){
@@ -62,6 +147,7 @@ public class StoryHandler : MonoBehaviour {
 			switch(eventType){
 			case EVENT_ENTER:
 				twineDisplay("enter school");
+				currentQuest = Q_FIND_PAPERS;
 				break;
 			case EVENT_EXIT:
 				break;
@@ -79,7 +165,9 @@ public class StoryHandler : MonoBehaviour {
 		if(tileName == "Office"){
 			switch(eventType){
 			case EVENT_ENTER:
-				twineDisplay("office");
+				if(currentQuest == Q_FIND_PAPERS){
+					twineDisplay("office");
+				}
 				break;
 			case EVENT_EXIT:
 				break;
@@ -115,7 +203,11 @@ public class StoryHandler : MonoBehaviour {
 		if(tileName == "Basement"){
 			switch(eventType){
 			case EVENT_ENTER:
-				twineDisplay("basement");
+				if(currentQuest == Q_NIGHTMARE_FIND_BASEMENT_DOOR){
+					twineDisplay("basement door nightmare");
+				} else if (currentQuest == Q_ENTER_BASEMENT) {
+					twineDisplay("unlock basement");
+				}
 				break;
 			case EVENT_EXIT:
 				break;
@@ -131,6 +223,30 @@ public class StoryHandler : MonoBehaviour {
 		}
 	}
 
+
+
+
+
+
+
+
+
+
+
+
+
+	private void showNightmareWorld(){
+		currentQuest = Q_NIGHTMARE_FIND_BASEMENT_DOOR;
+	}
+
+	private void hideNightmareWorld(){
+		currentQuest = Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY;
+	}
+
+	private void pickUpKey(){
+		currentQuest = Q_ENTER_BASEMENT;
+	}
+
 	private void twineDisplay(string passageName){
 		Application.ExternalCall("TwineDisplay", passageName);
 	}
@@ -141,5 +257,13 @@ public class StoryHandler : MonoBehaviour {
 	
 	public void startMovement(){
 		player.allowMovement = true;
+	}
+
+	/////////////////////////
+	/// debug stuff
+	/////////////////////////
+
+	void OnGUI() {
+		GUI.Label(new Rect(10, 10, 300, 300), "Current quest: " + currentQuest);		
 	}
 }

@@ -27,8 +27,8 @@ I00
 sS'pos'
 p15
 (lp16
-I196
-aI15
+I171
+aI10
 asS'passage'
 p17
 (itiddlywiki
@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-VStory intro
+V(Intro driving back to school late at night...)\u000a\u000a\u000aSwitch channel?\u000a[[First]]\u000a[[Second]]\u000a[[Off]]
 p22
 sS'title'
 p23
@@ -51,9 +51,9 @@ p26
 ((I2014
 I11
 I1
-I1
-I53
-I42
+I21
+I10
+I16
 I5
 I305
 I0
@@ -86,7 +86,7 @@ I00
 sg15
 (lp39
 I4
-aI387
+aI381
 asg17
 (itiddlywiki
 Tiddler
@@ -137,8 +137,8 @@ g14
 I00
 sg15
 (lp55
-F13.0
-aF132.0
+F4.0
+aF129.0
 asg17
 (itiddlywiki
 Tiddler
@@ -187,8 +187,8 @@ g14
 I00
 sg15
 (lp70
-F6.0
-aF514.5
+F4.0
+aF509.5
 asg17
 (itiddlywiki
 Tiddler
@@ -239,8 +239,8 @@ g14
 I00
 sg15
 (lp86
-F18.0
-aF7.0
+F6.0
+aF4.0
 asg17
 (itiddlywiki
 Tiddler
@@ -289,8 +289,8 @@ g14
 I00
 sg15
 (lp101
-F9.0
-aF259.0
+F6.0
+aF255.0
 asg17
 (itiddlywiki
 Tiddler
@@ -389,15 +389,15 @@ g14
 I00
 sg15
 (lp131
-F523.0
-aF10.0
+F521.0
+aF18.0
 asg17
 (itiddlywiki
 Tiddler
 p132
 (dp133
 g21
-VEntered office.\u000a[[Get documents]]\u000a<<unity 'STORY' stopMovement "">>
+VEntered office. Search for documents.
 p134
 sg23
 Voffice
@@ -407,9 +407,9 @@ g26
 ((I2014
 I11
 I1
-I2
-I4
-I35
+I16
+I26
+I57
 I5
 I305
 I0
@@ -439,15 +439,15 @@ g14
 I00
 sg15
 (lp146
-I686
-aI14
+I683
+aI17
 asg17
 (itiddlywiki
 Tiddler
 p147
 (dp148
 g21
-VEntered library (skipping to nightmate)\u000a[[nightmare]]\u000a<<unity 'STORY' stopMovement "">>
+VEntered library. Search for index.\u000a\u000a
 p149
 sg23
 Vlibrary
@@ -457,9 +457,9 @@ g26
 ((I2014
 I11
 I1
-I3
-I42
+I16
 I30
+I44
 I5
 I305
 I0
@@ -489,27 +489,27 @@ g14
 I00
 sg15
 (lp161
-F835.0
-aF14.0
+F1199.0
+aF27.0
 asg17
 (itiddlywiki
 Tiddler
 p162
 (dp163
 g21
-VArrived at basement door. Go to library again.
+VArrived at basement door.\u000aHmm... what is that sound? Some sort of code?\u000a\u000aGo to library again.
 p164
 sg23
-Vbasement
+Vbasement door reality
 p165
 sg25
 g26
 ((I2014
 I11
 I1
-I1
-I55
-I53
+I17
+I56
+I33
 I5
 I305
 I0
@@ -539,27 +539,27 @@ g14
 I00
 sg15
 (lp176
-F983.0
-aF12.0
+I1548
+aI23
 asg17
 (itiddlywiki
 Tiddler
 p177
 (dp178
 g21
-VReturned to library. \u000a[[Get code]] \u000a<<unity 'STORY' stopMovement "">>
+VThere's a closet with an old combination padlock. Numbers are worn off and letters have been scratched in instead.\u000a<<unity 'STORY' stopMovement "">>\u000a\u000a<<textinput $combination>> [[Enter|enter combination]]\u000a\u000a[[Leave it for now|leave lock]]\u000a
 p179
 sg23
-Vlibrary2
+Vcloset
 p180
 sg25
 g26
 ((I2014
 I11
 I1
-I3
-I50
-I12
+I18
+I31
+I43
 I5
 I305
 I0
@@ -575,8 +575,8 @@ g26
 I11
 I1
 I1
-I56
-I7
+I57
+I10
 I5
 I305
 I0
@@ -589,27 +589,27 @@ g14
 I00
 sg15
 (lp191
-I1137
-aI14
+I1735
+aI29
 asg17
 (itiddlywiki
 Tiddler
 p192
 (dp193
 g21
-VEntered teacher's lounge (find closet)
+VReturned to basement door, opened it (skipping to basement part, End for now)\u000a\u000a<<unity 'STORY' stopMovement "">>
 p194
 sg23
-Vteacherslounge
+Vunlock basement
 p195
 sg25
 g26
 ((I2014
 I11
 I1
+I19
 I3
-I50
-I42
+I16
 I5
 I305
 I0
@@ -625,8 +625,8 @@ g26
 I11
 I1
 I1
-I56
-I41
+I57
+I38
 I5
 I305
 I0
@@ -639,27 +639,27 @@ g14
 I00
 sg15
 (lp206
-I1284
-aI11
+F522.0
+aF166.0
 asg17
 (itiddlywiki
 Tiddler
 p207
 (dp208
 g21
-VOpened closet, got key (go to basement door again)
+VGot documents (go to library)
 p209
 sg23
-Vcloset
+Vfound documents
 p210
 sg25
 g26
 ((I2014
 I11
 I1
-I1
-I57
-I28
+I16
+I27
+I31
 I5
 I305
 I0
@@ -674,9 +674,9 @@ g26
 ((I2014
 I11
 I1
-I1
-I57
-I10
+I2
+I3
+I43
 I5
 I305
 I0
@@ -689,27 +689,27 @@ g14
 I00
 sg15
 (lp221
-I1430
-aI17
+F862.0
+aF444.0
 asg17
 (itiddlywiki
 Tiddler
 p222
 (dp223
 g21
-VReturned to basement door, opened it (skipping to basement part, End for now)
+VDo nightmare stuff. (Go to the basement door)\u000a\u000a<<unity 'STORY' showNightmareWorld "">>\u000a<<unity 'STORY' startMovement "">>
 p224
 sg23
-Vbasement2
+Vnightmare
 p225
 sg25
 g26
 ((I2014
 I11
 I1
-I1
-I58
-I6
+I18
+I23
+I26
 I5
 I305
 I0
@@ -724,9 +724,9 @@ g26
 ((I2014
 I11
 I1
-I1
-I57
-I38
+I3
+I42
+I32
 I5
 I305
 I0
@@ -739,27 +739,27 @@ g14
 I00
 sg15
 (lp236
-F523.0
-aF155.0
+F1365.0
+aF25.0
 asg17
 (itiddlywiki
 Tiddler
 p237
 (dp238
 g21
-VGot documents (go to library)\u000a<<unity 'STORY' startMovement "">>
+VReturned to library index.\u000a\u000aEnter query:\u000a<<textinput $searchString2>> [[Enter|enter code search]]\u000a\u000a[[Leave the index alone|leave index]]\u000a<<unity 'STORY' stopMovement "">>\u000a
 p239
 sg23
-VGet documents
+Vlibrary index 2
 p240
 sg25
 g26
 ((I2014
 I11
 I1
-I2
-I4
-I26
+I18
+I33
+I16
 I5
 I305
 I0
@@ -774,9 +774,9 @@ g26
 ((I2014
 I11
 I1
-I2
 I3
-I43
+I49
+I20
 I5
 I305
 I0
@@ -789,27 +789,27 @@ g14
 I00
 sg15
 (lp251
-F682.0
-aF152.0
+F358.0
+aF166.0
 asg17
 (itiddlywiki
 Tiddler
 p252
 (dp253
 g21
-VReturning from nightmare, (go to basement door)\u000a<<unity 'STORY' startMovement "">>
+V(go to office)\u000a<<unity 'STORY' startMovement "">>\u000a\u000a\u000a
 p254
 sg23
-Vnightmare
+Vshow intro
 p255
 sg25
 g26
 ((I2014
 I11
 I1
-I3
-I42
-I52
+I16
+I17
+I33
 I5
 I305
 I0
@@ -825,8 +825,8 @@ g26
 I11
 I1
 I3
-I42
-I32
+I56
+I56
 I5
 I305
 I0
@@ -839,27 +839,27 @@ g14
 I00
 sg15
 (lp266
-F985.0
-aF159.0
+I861
+aI307
 asg17
 (itiddlywiki
 Tiddler
 p267
 (dp268
 g21
-VHas code.\u000a(Go to teacher's lounge)\u000a<<unity 'STORY' startMovement "">>
+VReading essays, skip to [[nightmare]]\u000a
 p269
 sg23
-VGet code
+Vfound essays
 p270
 sg25
 g26
 ((I2014
 I11
 I1
-I3
-I49
-I45
+I18
+I4
+I28
 I5
 I305
 I0
@@ -874,9 +874,9 @@ g26
 ((I2014
 I11
 I1
-I3
-I49
-I20
+I16
+I7
+I18
 I5
 I305
 I0
@@ -886,30 +886,30 @@ tp278
 Rp279
 sbsa(dp280
 g14
-I01
+I00
 sg15
 (lp281
-F346.0
-aF168.0
+I2
+aI646
 asg17
 (itiddlywiki
 Tiddler
 p282
 (dp283
 g21
-V(go to office)\u000a<<unity 'STORY' startMovement "">>
+V\u000atry {\u000a      version.extensions['textinput'] = { \u000a        major:1, minor:0, revision:0 \u000a      };\u000a    macros['textinput'] = {\u000a    handler: function(place, macroName, params, parser) {\u000a    v = params[0].replace("$","");\u000a    var input= document.createElement('input');\u000a    input.type = "text";\u000a    d = v+"TextInput";\u000a    input.id = d;\u000a    input.addEventListener('keyup', function()\u000a    {\u000a    state.history[0].variables[v] = document.getElementById(d).value;\u000a    });\u000a    place.appendChild(input);\u000a    },	\u000a    init: function() { var v; var d;},\u000a    };\u000a    } catch(e) {\u000a      throwError(place,"textinput Setup Error: "+e.message); \u000a}
 p284
 sg23
-Vshow intro
+VInput macro
 p285
 sg25
 g26
 ((I2014
 I11
 I1
-I3
-I57
-I9
+I16
+I16
+I23
 I5
 I305
 I0
@@ -919,25 +919,777 @@ tp288
 Rp289
 sg31
 (lp290
+Vscript
+p291
+asg33
+g26
+((I2014
+I11
+I1
+I16
+I12
+I15
+I5
+I305
+I0
+tp292
+(dp293
+tp294
+Rp295
+sbsa(dp296
+g14
+I00
+sg15
+(lp297
+I2
+aI778
+asg17
+(itiddlywiki
+Tiddler
+p298
+(dp299
+g21
+V\u000aEnter Your Name:\u000a<<textinput $playerName>>\u000a[[Enter]]\u000a
+p300
+sg23
+VInput example
+p301
+sg25
+g26
+((I2014
+I11
+I1
+I16
+I18
+I5
+I5
+I305
+I0
+tp302
+(dp303
+tp304
+Rp305
+sg31
+(lp306
 sg33
 g26
 ((I2014
 I11
 I1
-I3
+I16
+I15
+I28
+I5
+I305
+I0
+tp307
+(dp308
+tp309
+Rp310
+sbsa(dp311
+g14
+I00
+sg15
+(lp312
+F1.0
+aF916.0
+asg17
+(itiddlywiki
+Tiddler
+p313
+(dp314
+g21
+VHello <<print $playerName>>!
+p315
+sg23
+VEnter
+p316
+sg25
+g26
+((I2014
+I11
+I1
+I16
+I18
+I10
+I5
+I305
+I0
+tp317
+(dp318
+tp319
+Rp320
+sg31
+(lp321
+sg33
+g26
+((I2014
+I11
+I1
+I16
+I18
+I8
+I5
+I305
+I0
+tp322
+(dp323
+tp324
+Rp325
+sbsa(dp326
+g14
+I00
+sg15
+(lp327
+F861.0
+aF168.0
+asg17
+(itiddlywiki
+Tiddler
+p328
+(dp329
+g21
+V\u000a<<if $searchString is "Hansen" or $searchString is "hansen">> \u000aThere's something about <<print $searchString>>!\u000a[[Read the essay|found essays]]\u000a<<else>>\u000aYou couldn't find anything about <<print $searchString>>.\u000a[[library index]]\u000a<<endif>>
+p330
+sg23
+Venter name
+p331
+sg25
+g26
+((I2014
+I11
+I1
+I18
+I23
+I12
+I5
+I305
+I0
+tp332
+(dp333
+tp334
+Rp335
+sg31
+(lp336
+sg33
+g26
+((I2014
+I11
+I1
+I16
+I21
+I5
+I5
+I305
+I0
+tp337
+(dp338
+tp339
+Rp340
+sbsa(dp341
+g14
+I00
+sg15
+(lp342
+I862
+aI20
+asg17
+(itiddlywiki
+Tiddler
+p343
+(dp344
+g21
+VFound library index.\u000a\u000aEnter query (clue is Hansen):\u000a<<textinput $searchString>> [[Enter|enter name]]\u000a\u000a[[Leave the index alone|leave index]]\u000a\u000a<<unity 'STORY' stopMovement "">>
+p345
+sg23
+Vlibrary index
+p346
+sg25
+g26
+((I2014
+I11
+I1
+I18
+I32
+I37
+I5
+I305
+I0
+tp347
+(dp348
+tp349
+Rp350
+sg31
+(lp351
+sg33
+g26
+((I2014
+I11
+I1
+I16
+I30
+I32
+I5
+I305
+I0
+tp352
+(dp353
+tp354
+Rp355
+sbsa(dp356
+g14
+I00
+sg15
+(lp357
+I1367
+aI202
+asg17
+(itiddlywiki
+Tiddler
+p358
+(dp359
+g21
+V<<if $searchString2 is "Morse" or $searchString is "Morse code">> \u000aYou find an old scout pamphlet about morse code!\u000a[[Read pamphlet|morse code]]\u000a<<else>>\u000aYou couldn't find anything about <<print $searchString2>>.\u000a[[library index 2]]\u000a<<endif>>
+p360
+sg23
+Venter code search
+p361
+sg25
+g26
+((I2014
+I11
+I1
+I18
+I38
+I25
+I5
+I305
+I0
+tp362
+(dp363
+tp364
+Rp365
+sg31
+(lp366
+sg33
+g26
+((I2014
+I11
+I1
+I17
+I40
+I9
+I5
+I305
+I0
+tp367
+(dp368
+tp369
+Rp370
+sbsa(dp371
+g14
+I00
+sg15
+(lp372
+F1369.0
+aF365.0
+asg17
+(itiddlywiki
+Tiddler
+p373
+(dp374
+g21
+VThis is morse code! ::\u000aasd\u000aasd\u000afsd\u000asdf\u000afasd\u000asdgfa\u000a\u000a<<unity 'STORY' startMovement "">>
+p375
+sg23
+Vmorse code
+p376
+sg25
+g26
+((I2014
+I11
+I1
+I18
+I17
+I23
+I5
+I305
+I0
+tp377
+(dp378
+tp379
+Rp380
+sg31
+(lp381
+sg33
+g26
+((I2014
+I11
+I1
+I17
+I43
+I45
+I5
+I305
+I0
+tp382
+(dp383
+tp384
+Rp385
+sbsa(dp386
+g14
+I00
+sg15
+(lp387
+I1043
+aI24
+asg17
+(itiddlywiki
+Tiddler
+p388
+(dp389
+g21
+VDoor looks different, that number isn't usually there.\u000a\u000a[[Wake up from nightmare|wake up]]\u000a\u000a
+p390
+sg23
+Vbasement door nightmare
+p391
+sg25
+g26
+((I2014
+I11
+I1
+I18
+I5
+I42
+I5
+I305
+I0
+tp392
+(dp393
+tp394
+Rp395
+sg31
+(lp396
+sg33
+g26
+((I2014
+I11
+I1
+I17
 I56
+I16
+I5
+I305
+I0
+tp397
+(dp398
+tp399
+Rp400
+sbsa(dp401
+g14
+I00
+sg15
+(lp402
+F1043.0
+aF174.0
+asg17
+(itiddlywiki
+Tiddler
+p403
+(dp404
+g21
+V(back in library)\u000a\u000a<<unity 'STORY' hideNightmareWorld "">>
+p405
+sg23
+Vwake up
+p406
+sg25
+g26
+((I2014
+I11
+I1
+I18
+I5
+I49
+I5
+I305
+I0
+tp407
+(dp408
+tp409
+Rp410
+sg31
+(lp411
+sg33
+g26
+((I2014
+I11
+I1
+I18
+I5
+I38
+I5
+I305
+I0
+tp412
+(dp413
+tp414
+Rp415
+sbsa(dp416
+g14
+I00
+sg15
+(lp417
+F1548.0
+aF210.0
+asg17
+(itiddlywiki
+Tiddler
+p418
+(dp419
+g21
+V<<if $combination is "xxx">> \u000aThe lock opens and you find a key. Go to the basement.\u000a<<unity 'STORY' pickUpKey "">>\u000a<<unity 'STORY' startMovement "">>\u000a<<else>>\u000aThe lock doesn't budge. [[Try again|closet]]\u000a<<endif>>
+p420
+sg23
+Venter combination
+p421
+sg25
+g26
+((I2014
+I11
+I1
+I18
+I18
+I36
+I5
+I305
+I0
+tp422
+(dp423
+tp424
+Rp425
+sg31
+(lp426
+sg33
+g26
+((I2014
+I11
+I1
+I18
+I13
+I49
+I5
+I305
+I0
+tp427
+(dp428
+tp429
+Rp430
+sbsa(dp431
+g14
+I00
+sg15
+(lp432
+F1547.0
+aF368.0
+asg17
+(itiddlywiki
+Tiddler
+p433
+(dp434
+g21
+VDidn't know combination...\u000a<<unity 'STORY' startMovement "">>
+p435
+sg23
+Vleave lock
+p436
+sg25
+g26
+((I2014
+I11
+I1
+I18
+I32
+I6
+I5
+I305
+I0
+tp437
+(dp438
+tp439
+Rp440
+sg31
+(lp441
+sg33
+g26
+((I2014
+I11
+I1
+I18
+I31
+I47
+I5
+I305
+I0
+tp442
+(dp443
+tp444
+Rp445
+sbsa(dp446
+g14
+I00
+sg15
+(lp447
+F1105.0
+aF542.0
+asg17
+(itiddlywiki
+Tiddler
+p448
+(dp449
+g21
+VYou leave the index\u000a<<unity 'STORY' startMovement "">>
+p450
+sg23
+Vleave index
+p451
+sg25
+g26
+((I2014
+I11
+I1
+I18
+I32
 I56
 I5
 I305
 I0
-tp291
-(dp292
-tp293
-Rp294
+tp452
+(dp453
+tp454
+Rp455
+sg31
+(lp456
+sg33
+g26
+((I2014
+I11
+I1
+I18
+I32
+I41
+I5
+I305
+I0
+tp457
+(dp458
+tp459
+Rp460
+sbsa(dp461
+g14
+I01
+sg15
+(lp462
+F172.0
+aF280.0
+asg17
+(itiddlywiki
+Tiddler
+p463
+(dp464
+g21
+VHmm... what's this? Sounds like some local channel...\u000a\u000aSwitch channel?\u000a[[First]]\u000a[[Off]]
+p465
+sg23
+VSecond
+p466
+sg25
+g26
+((I2014
+I11
+I1
+I21
+I17
+I19
+I5
+I305
+I0
+tp467
+(dp468
+tp469
+Rp470
+sg31
+(lp471
+sg33
+g26
+((I2014
+I11
+I1
+I20
+I53
+I20
+I5
+I305
+I0
+tp472
+(dp473
+tp474
+Rp475
+sbsa(dp476
+g14
+I00
+sg15
+(lp477
+F179.0
+aF416.0
+asg17
+(itiddlywiki
+Tiddler
+p478
+(dp479
+g21
+VNo, silence is better. \u000a\u000a[[I'll be there in a minute anyway.|go to school]]
+p480
+sg23
+VOff
+p481
+sg25
+g26
+((I2014
+I11
+I1
+I21
+I13
+I38
+I5
+I305
+I0
+tp482
+(dp483
+tp484
+Rp485
+sg31
+(lp486
+sg33
+g26
+((I2014
+I11
+I1
+I20
+I53
+I20
+I5
+I305
+I0
+tp487
+(dp488
+tp489
+Rp490
+sbsa(dp491
+g14
+I00
+sg15
+(lp492
+F170.0
+aF144.0
+asg17
+(itiddlywiki
+Tiddler
+p493
+(dp494
+g21
+VNight radio is fine. There's usually some debate, even if the crazies tend to call in when it gets late.\u000a\u000aSwitch channel?\u000a[[Second]]\u000a[[Off]]
+p495
+sg23
+VFirst
+p496
+sg25
+g26
+((I2014
+I11
+I1
+I21
+I17
+I13
+I5
+I305
+I0
+tp497
+(dp498
+tp499
+Rp500
+sg31
+(lp501
+sg33
+g26
+((I2014
+I11
+I1
+I20
+I53
+I20
+I5
+I305
+I0
+tp502
+(dp503
+tp504
+Rp505
+sbsa(dp506
+g14
+I00
+sg15
+(lp507
+F178.0
+aF553.0
+asg17
+(itiddlywiki
+Tiddler
+p508
+(dp509
+g21
+V<<unity 'CARSTORY' enterSchool "">>\u000a
+p510
+sg23
+Vgo to school
+p511
+sg25
+g26
+((I2014
+I11
+I1
+I21
+I13
+I59
+I5
+I305
+I0
+tp512
+(dp513
+tp514
+Rp515
+sg31
+(lp516
+sg33
+g26
+((I2014
+I11
+I1
+I21
+I13
+I40
+I5
+I305
+I0
+tp517
+(dp518
+tp519
+Rp520
 sbsasS'scale'
-p295
+p521
 I1
 sS'snapping'
-p296
+p522
 I00
 ss.
