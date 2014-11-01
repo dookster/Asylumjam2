@@ -1,20 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/**
- * Base class for a tile, a 2x2 area wich can be blocked (exit) in any of
- * the four directions.
- * 
- * Can fire an event on:
- *  - enter
- *  - exit
- *  - look in any direction
- * 
- * All events can be set to only fire once.
- * 
- * Tiles with nothing but blocked exits should just use this script, tiles needing more specific events
- * should have a script extending this one.
- */
+
 public class TileBase : MonoBehaviour {
 
 	public bool blockNorth;
@@ -22,10 +9,13 @@ public class TileBase : MonoBehaviour {
 	public bool blockSouth;
 	public bool blockWest;
 
+	public bool fireOnce;
+
+
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -42,8 +32,9 @@ public class TileBase : MonoBehaviour {
 		Gizmos.color = Color.cyan;
 		Gizmos.DrawWireCube(transform.position, transform.localScale);
 
-		float wallWidth = 0.2f;
+		float wallWidth = 0.1f;
 		float halfSize = transform.localScale.x /2;
+		float height = transform.localScale.y;
 
 		Vector3 top = new Vector3(transform.position.x, drawHeight, transform.position.z + halfSize);
 		Vector3 bottom = new Vector3(transform.position.x, drawHeight, transform.position.z - halfSize);
@@ -53,13 +44,13 @@ public class TileBase : MonoBehaviour {
 		Gizmos.color = Color.red;
 
 		if(blockNorth)
-			Gizmos.DrawCube(top, new Vector3(halfSize * 2, halfSize * 2, wallWidth));
+			Gizmos.DrawCube(top, new Vector3(halfSize * 2, height, wallWidth));
 		if(blockEast)
-			Gizmos.DrawCube(right, new Vector3(wallWidth, halfSize * 2, halfSize * 2));
+			Gizmos.DrawCube(right, new Vector3(wallWidth, height, halfSize * 2));
 		if(blockSouth)
-			Gizmos.DrawCube(bottom, new Vector3(halfSize * 2, halfSize * 2, wallWidth));
+			Gizmos.DrawCube(bottom, new Vector3(halfSize * 2, height, wallWidth));
 		if(blockWest)
-			Gizmos.DrawCube(left, new Vector3(wallWidth, halfSize * 2, halfSize * 2));
+			Gizmos.DrawCube(left, new Vector3(wallWidth, height, halfSize * 2));
 	}
 
 	public void onLookingNorth(){
@@ -83,6 +74,10 @@ public class TileBase : MonoBehaviour {
 	}
 
 	public void onExit(){
+
+	}
+
+	public void onUse(){
 
 	}
 

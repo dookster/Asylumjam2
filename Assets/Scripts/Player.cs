@@ -5,13 +5,16 @@ public class Player : MonoBehaviour {
 	 
 	public float movementSpeed = 0.2f;
 	public float animateSpeed = 0.2f;
+	public float moveLength = 2.5f;
 
 	public Camera mainCamera;
 
 	public GameObject forwardArrow;
 	public GameObject leftArrow;
 	public GameObject rightArrow;
-	
+
+	public GameObject uiArrows;
+
 	public bool allowMovement;
 
 	private const int FORWARD = 0;
@@ -20,15 +23,22 @@ public class Player : MonoBehaviour {
 
 	private int nextMove = -1;
 
-	public TileBase currentTile;
+	private StoryHandler storyHandler;
+
+	private TileBase currentTile;
 
 	// Use this for initialization
 	void Start () {
-
+		storyHandler = GameObject.FindGameObjectWithTag("storyhandler").GetComponent<StoryHandler>() as StoryHandler;
+		if(storyHandler == null) Debug.Log("ERROR: NO STORY HANDLER");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if(allowMovement)
+			uiArrows.SetActive(true);
+		else
+			uiArrows.SetActive(false);
 
 		if(allowMovement) {
 			Ray clickRay = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -54,6 +64,9 @@ public class Player : MonoBehaviour {
 			if(Input.GetButtonDown("Right")){
 				nextMove = RIGHT;
 			}
+			if(Input.GetButtonUp("Use")){
+				onUse();
+			}
 		}
 
 
@@ -72,30 +85,29 @@ public class Player : MonoBehaviour {
 				switch(nextMove){
 				case FORWARD:
 					// Check if forward is blocked here
-					Debug.Log(transform.forward);
 					bool blocked = false;
 					if(Mathf.RoundToInt(transform.forward.z) > 0 && currentTile.blockNorth){
-						blocked = true;
 						// north
+						blocked = true;
 					}
 
 					if(Mathf.RoundToInt(transform.forward.z) < 0 && currentTile.blockSouth){
-						blocked = true;
 						// south
+						blocked = true;
 					}
 
 					if(Mathf.RoundToInt(transform.forward.x) < 0 && currentTile.blockWest){
-						blocked = true;
 						// west
+						blocked = true;
 					}
 
 					if(Mathf.RoundToInt(transform.forward.x) > 0 && currentTile.blockEast){
-						blocked = true;
 						// east
+						blocked = true;
 					}
 
 					if(!blocked)
-						iTween.MoveBy(gameObject,iTween.Hash("z",2,"time",movementSpeed, "oncomplete", "afterMoving", "oncompletetarget", gameObject));			
+						iTween.MoveBy(gameObject,iTween.Hash("z", moveLength, "time",movementSpeed, "oncomplete", "afterMoving", "oncompletetarget", gameObject));			
 					nextMove = -1;
 					break;
 				case LEFT:
@@ -116,18 +128,70 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
+		TileBase enteredTile = (TileBase) other.gameObject.GetComponent<TileBase>();
+		if(enteredTile != currentTile){
+			currentTile = enteredTile;
+			if(currentTile != null){
+				storyHandler.handleMoveEvent(currentTile.name, StoryHandler.EVENT_ENTER);
+			}
+		}
 
 	}
 
 	void OnTriggerStay(Collider other){
-		currentTile = (TileBase) other.gameObject.GetComponent<TileBase>();
+
+	}
+
+	private void onUse(){
+		if(currentTile != null){
+			if(Mathf.RoundToInt(transform.forward.z) > 0){
+				// north
+				storyHandler.handleUseEvent(currentTile.name, StoryHandler.EVENT_NORTH);
+			}
+			
+			if(Mathf.RoundToInt(transform.forward.z) < 0){
+				// south
+				storyHandler.handleUseEvent(currentTile.name, StoryHandler.EVENT_SOUTH);
+			}
+			
+			if(Mathf.RoundToInt(transform.forward.x) < 0){
+				// west
+				storyHandler.handleUseEvent(currentTile.name, StoryHandler.EVENT_WEST);
+			}
+			
+			if(Mathf.RoundToInt(transform.forward.x) > 0){
+				// east
+				storyHandler.handleUseEvent(currentTile.name, StoryHandler.EVENT_EAST);
+			}
+		}
 	}
 
 	private void afterMoving(){
+		// even out rotation
 		straightenUp();
 
-
-
+		// fire any events for the current tile to the story handler
+		if(currentTile != null){
+			if(Mathf.RoundToInt(transform.forward.z) > 0){
+				// north
+				storyHandler.handleMoveEvent(currentTile.name, StoryHandler.EVENT_NORTH);
+			}
+			
+			if(Mathf.RoundToInt(transform.forward.z) < 0){
+				// south
+				storyHandler.handleMoveEvent(currentTile.name, StoryHandler.EVENT_SOUTH);
+			}
+			
+			if(Mathf.RoundToInt(transform.forward.x) < 0){
+				// west
+				storyHandler.handleMoveEvent(currentTile.name, StoryHandler.EVENT_WEST);
+			}
+			
+			if(Mathf.RoundToInt(transform.forward.x) > 0){
+				// east
+				storyHandler.handleMoveEvent(currentTile.name, StoryHandler.EVENT_EAST);
+			}
+		}
 	}
 
 	/**
@@ -138,7 +202,9 @@ public class Player : MonoBehaviour {
 		                                         Mathf.Round(transform.localRotation.y), 
 		                                         Mathf.Round(transform.localRotation.z), 
 		                                         Mathf.Round(transform.localRotation.w));
-		transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, Mathf.Round(transform.position.z));
+
+		// TODO find a way to round position to half?
+		//transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, Mathf.Round(transform.position.z));
 	}
 
 	public void turnLeft(){

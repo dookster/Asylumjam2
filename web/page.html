@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--
 Made in Twine 1.4.2 (running on Windows 7)
-Built on 31 okt 2014 at 16:57:52, +0100
+Built on 01 nov 2014 at 04:07:18, +0100
 
 Sugarcane is based on:
 
@@ -189,17 +189,17 @@ document.onkeydown = function(e) {
         case 37:
         case 65:
         	<!-- left -->
-            GetUnity().SendMessage("Player", "turnLeft", "");
+            GetUnity().SendMessage("Main Camera", "turnLeft", "");
             break;
         case 38:
         case 87:
             <!-- up -->
-            GetUnity().SendMessage("Player", "goForward", "");
+            GetUnity().SendMessage("Main Camera", "goForward", "");
             break;
         case 39:
         case 68:
             <!-- right -->
-            GetUnity().SendMessage("Player", "turnRight", "");
+            GetUnity().SendMessage("Main Camera", "turnRight", "");
             break;
         case 40:
         case 83:
@@ -501,7 +501,7 @@ body {
 		#sidebar{display:none;}
 		</style>
 		</div>
-		<div id="storeArea" data-size="6" hidden><div tiddler="style" tags="stylesheet" created="201410311559" modifier="twee" twine-position="4,387">#sidebar { display: none; }\n#passages { margin-left: 10px; }\n#passages { border-left: 0px; padding-left: 0; }\n\n</div><div tiddler="StorySettings" tags="" created="201410311601" modifier="twee" twine-position="9,259">jquery:off\nhash:off\nbookmark:on\nmodernizr:off\nundo:off\nobfuscate:off\nexitprompt:off\nblankcss:off\n</div><div tiddler="Start" tags="" created="201410311553" modifier="twee" twine-position="235,31">Your story edf asdkl sdajkf ashjkf ashj fhasjkl fhasdjkl fhasjklfh asjklf hasjkl fhasdjklfh asjkl fhasdjkfhasjklf hajslfh jasdl fhasdlfhasjklf hjkaslf hjkasldf hasdjklf hsdjakl fhasdjkl fhasjkl fhjask fhasjkl fhsjkalf hajkslYour story edf asdkl sdajkf ashjkf ashj fhasjkl fhasdjkl fhasjklfh asjklf hasjkl fhasdjklfh asjkl fhasdjkfhasjklf hajslfh jasdl fhasdlfhasjklf hjkaslf hjkasldf hasdjklf hsdjakl fhasdjkl fhasjkl fhjask fhasjkl fhsjkalf hajkslYour story edf asdkl sdajkf ashjkf ashj fhasjkl fhasdjkl fhasjklfh asjklf hasjkl fhasdjklfh asjkl fhasdjkfhasjklf hajslfh jasdl fhasdlfhasjklf hjkaslf hjkasldf hasdjklf hsdjakl fhasdjkl fhasjkl fhjask fhasjkl fhsjkalf hajkslYour story edf asdkl sdajkf ashjkf ashj fhasjkl fhasdjkl fhasjklfh asjklf hasjkl fhasdjklfh asjkl fhasdjkfhasjklf hajslfh jasdl fhasdlfhasjklf hjkaslf hjkasldf hasdjklf hsdjakl fhasdjkl fhasjkl fhjask fhasjkl fhsjkalf hajkslYour story edf asdkl sdajkf ashjkf ashj fhasjkl fhasdjkl fhasjklfh asjklf hasjkl fhasdjklfh asjkl fhasdjkfhasjklf hajslfh jasdl fhasdlfhasjkl</div><div tiddler="unity macro" tags="script" created="201408242013" modifier="twee" twine-position="6,514">try {\n  macros.unity={\n    handler: function(place, macroName, params) {\n\t\t// SendMessage(gameObject:string, function:string, parameter:string);\n\t\tGetUnity().SendMessage(params[0], params[1], params[2]); \n    }\n};\n} catch(e) {\n  throwError(place,&quot;macrodemo Setup Error: &quot;+e.message); \n}\n\n</div><div tiddler="StoryAuthor" tags="" created="201408241822" modifier="twee" twine-position="13,132">dook - aergia.dk</div><div tiddler="StoryTitle" tags="" created="201408241822" modifier="twee" twine-position="18,7">Asylum Jam 2014</div>
+		<div id="storeArea" data-size="18" hidden><div tiddler="library2" tags="" created="201411010156" modifier="twee" twine-position="983,12">Returned to library. \n[[Get code]] \n&lt;&lt;unity 'STORY' stopMovement &quot;&quot;&gt;&gt;</div><div tiddler="style" tags="stylesheet" created="201410311559" modifier="twee" twine-position="4,387">#sidebar { display: none; }\n#passages { margin-left: 10px; }\n#passages { border-left: 0px; padding-left: 0; }\n\n</div><div tiddler="Get documents" tags="" created="201411010203" modifier="twee" twine-position="523,155">Got documents (go to library)\n&lt;&lt;unity 'STORY' startMovement &quot;&quot;&gt;&gt;</div><div tiddler="StorySettings" tags="" created="201410311601" modifier="twee" twine-position="9,259">jquery:off\nhash:off\nbookmark:on\nmodernizr:off\nundo:off\nobfuscate:off\nexitprompt:off\nblankcss:off\n</div><div tiddler="office" tags="" created="201411010154" modifier="twee" twine-position="523,10">Entered office.\n[[Get documents]]\n&lt;&lt;unity 'STORY' stopMovement &quot;&quot;&gt;&gt;</div><div tiddler="teacherslounge" tags="" created="201411010156" modifier="twee" twine-position="1137,14">Entered teacher's lounge (find closet)</div><div tiddler="nightmare" tags="" created="201411010342" modifier="twee" twine-position="682,152">Returning from nightmare, (go to basement door)\n&lt;&lt;unity 'STORY' startMovement &quot;&quot;&gt;&gt;</div><div tiddler="basement" tags="" created="201411010155" modifier="twee" twine-position="835,14">Arrived at basement door. Go to library again.</div><div tiddler="enter school" tags="" created="201411010153" modifier="twee" twine-position="358,13">Entered the school (go to the office)\n[[show intro]]\n&lt;&lt;unity 'STORY' stopMovement &quot;&quot;&gt;&gt;</div><div tiddler="show intro" tags="" created="201411010356" modifier="twee" twine-position="346,168">(go to office)\n&lt;&lt;unity 'STORY' startMovement &quot;&quot;&gt;&gt;</div><div tiddler="Start" tags="" created="201410311553" modifier="twee" twine-position="196,15">Story intro</div><div tiddler="Get code" tags="" created="201411010349" modifier="twee" twine-position="985,159">Has code.\n(Go to teacher's lounge)\n&lt;&lt;unity 'STORY' startMovement &quot;&quot;&gt;&gt;</div><div tiddler="unity macro" tags="script" created="201408242013" modifier="twee" twine-position="6,514">try {\n  macros.unity={\n    handler: function(place, macroName, params) {\n\t\t// SendMessage(gameObject:string, function:string, parameter:string);\n\t\tGetUnity().SendMessage(params[0], params[1], params[2]); \n    }\n};\n} catch(e) {\n  throwError(place,&quot;macrodemo Setup Error: &quot;+e.message); \n}\n\n</div><div tiddler="library" tags="" created="201411010154" modifier="twee" twine-position="686,14">Entered library (skipping to nightmate)\n[[nightmare]]\n&lt;&lt;unity 'STORY' stopMovement &quot;&quot;&gt;&gt;</div><div tiddler="StoryAuthor" tags="" created="201408241822" modifier="twee" twine-position="13,132">dook - aergia.dk</div><div tiddler="StoryTitle" tags="" created="201408241822" modifier="twee" twine-position="18,7">Asylum Jam 2014</div><div tiddler="basement2" tags="" created="201411010157" modifier="twee" twine-position="1430,17">Returned to basement door, opened it (skipping to basement part, End for now)</div><div tiddler="closet" tags="" created="201411010157" modifier="twee" twine-position="1284,11">Opened closet, got key (go to basement door again)</div>
 		</div>
   </td>
 </tr>
