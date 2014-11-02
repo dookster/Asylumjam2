@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\OpenDoor.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\SceneryRoll.cs" />
+     <Compile Include="Assets\Scripts\SlamDoor.cs" />
      <Compile Include="Assets\Scripts\SoundHandler.cs" />
      <Compile Include="Assets\Scripts\StoryHandler.cs" />
      <Compile Include="Assets\Scripts\TileBase.cs" />

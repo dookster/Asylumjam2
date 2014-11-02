@@ -71,6 +71,19 @@ public class TileBase : MonoBehaviour {
 		}
 	}
 
+	public void closeDoor(){
+		foreach(GameObject go in doors){
+			if(Mathf.Round(go.transform.localRotation.eulerAngles.y) == 130){
+				iTween.RotateAdd(go, iTween.Hash("y", -130, "time", 2));
+				soundHandler.playOpenDoor();
+			}
+			if(Mathf.Round(go.transform.localRotation.eulerAngles.y) == 50){
+				iTween.RotateAdd(go, iTween.Hash("y", 130, "time", 2));
+				soundHandler.playOpenDoor();
+			}
+		}
+	}
+	
 	public void onLookingNorth(){
 
 	}

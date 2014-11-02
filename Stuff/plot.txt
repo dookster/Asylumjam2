@@ -25,6 +25,12 @@ Plot:
 
 
 
+morse code:
+MIN
+M - -
+I . .
+N - .
+
 
 * Listen to all radio stations in car
 * Arrive at and enter school

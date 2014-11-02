@@ -21,4 +21,8 @@ public class SoundHandler : MonoBehaviour {
 		AudioSource.PlayClipAtPoint(openDoor, transform.position);
 	}
 
+	public void playPapers(){
+		AudioSource.PlayClipAtPoint(rufflePapers, transform.position);
+	}
+
 }

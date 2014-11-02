@@ -28,23 +28,28 @@ public class StoryHandler : MonoBehaviour {
 
 	public int currentQuest = -1;
 
+	public GameObject monoliths;
+	public GameObject knocking;
+
 	public AudioClip normalAmbience;
 	public AudioClip nightmareAmbience;
 
 	private AudioSource audioSource;
 	private Player player;
+	private SoundHandler soundHandler;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Player>() as Player;
 		if(player == null) Debug.Log("ERROR: NO PLAYER");
 		audioSource = GetComponent<AudioSource>() as AudioSource;
+		soundHandler = GameObject.Find("SoundHandler").GetComponent<SoundHandler>() as SoundHandler;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if(Input.GetButtonUp("Use")){
-			showNightmareWorld();
+			//showNightmareWorld();
 		}
 	}
 
@@ -74,8 +79,9 @@ public class StoryHandler : MonoBehaviour {
 			case EVENT_NORTH:
 				break;
 			case EVENT_SOUTH:
+				twineDisplay("found documents");
+				soundHandler.playPapers();
 				if(currentQuest == Q_FIND_PAPERS){
-					twineDisplay("found documents");
 					currentQuest = Q_SEARCH_FOR_FAMILY_NAME;
 				} else {
 					// repeat look at papers, reminding of name
@@ -131,6 +137,49 @@ public class StoryHandler : MonoBehaviour {
 		}
 
 
+		if(tileName == "Stairs up"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				twineDisplay("stairs up");
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "Cafeteria"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				twineDisplay("cafeteria door");
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "LoungeDoor"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				twineDisplay("lounge door");
+				break;
+			}
+		}
+
+
 //		if(tileName == "Closet"){
 //			switch(direction){			
 //			case EVENT_NORTH:
@@ -148,6 +197,22 @@ public class StoryHandler : MonoBehaviour {
 //		}
 
 
+		if(tileName == "EndPapers"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				twineDisplay("end papers");
+				soundHandler.playPapers();
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+
 		// Doors
 		if(tileName == "ClassDoor1"){
 			switch(direction){			
@@ -162,6 +227,16 @@ public class StoryHandler : MonoBehaviour {
 			case EVENT_WEST:
 				player.currentTile.openDoor();
 				player.currentTile.blockWest = false;
+				break;
+			case EVENT_EAST:
+				twineDisplay("wc");
+				break;
+			}
+		}
+		if(tileName == "wc"){
+			switch(direction){
+			case EVENT_EAST:
+				twineDisplay("wc");
 				break;
 			}
 		}
@@ -333,20 +408,40 @@ public class StoryHandler : MonoBehaviour {
 
 
 
-	private void showNightmareWorld(){
+	public void showNightmareWorld(){
 		currentQuest = Q_NIGHTMARE_FIND_BASEMENT_DOOR;
 		audioSource.clip = nightmareAmbience;
 		audioSource.Play();
+		monoliths.SetActive(true);
+		GameObject[] largeTables = GameObject.FindGameObjectsWithTag("largetable");
+		foreach(GameObject table in largeTables){
+			table.SetActive(false);
+		}
+
 		RenderSettings.fog = true;
 	}
 
-	private void hideNightmareWorld(){
+	public void hideNightmareWorld(){
 		currentQuest = Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY;
 		player.transform.position = new Vector3(-12.5f, 0f, -17.5f);
 		audioSource.clip = normalAmbience;
 		audioSource.Play();
+		monoliths.SetActive(false);
+		GameObject[] largeTables = GameObject.FindGameObjectsWithTag("largetable");
+		foreach(GameObject table in largeTables){
+			table.SetActive(true);
+		}
 		RenderSettings.fog = false;
+		knocking.SetActive(true);
 	}
+
+
+	public void goToBasement(){
+		player.transform.position = new Vector3(2.5f, 0f, -10f);
+		audioSource.Stop();
+		knocking.SetActive(false);
+	}
+
 
 //	private void pickUpKey(){
 //		currentQuest = Q_ENTER_BASEMENT;
