@@ -11,11 +11,14 @@ public class TileBase : MonoBehaviour {
 
 	public bool fireOnce;
 
+	public GameObject[] doors; // any doors connected to the tile, all will be opened (should be just 1 or 2)
+							   // Add the door HINGE to this
 
+	private SoundHandler soundHandler;
 
 	// Use this for initialization
 	void Start () {
-
+		soundHandler = GameObject.Find("SoundHandler").GetComponent<SoundHandler>() as SoundHandler;
 	}
 	
 	// Update is called once per frame
@@ -51,6 +54,21 @@ public class TileBase : MonoBehaviour {
 			Gizmos.DrawCube(bottom, new Vector3(halfSize * 2, height, wallWidth));
 		if(blockWest)
 			Gizmos.DrawCube(left, new Vector3(wallWidth, height, halfSize * 2));
+	}
+
+	public void openDoor(){
+		foreach(GameObject go in doors){
+			if(iTween.Count(go) < 1){
+				if(Mathf.Round(go.transform.localRotation.eulerAngles.y) == 0){
+					iTween.RotateAdd(go, iTween.Hash("y", 130, "time", 2));
+					soundHandler.playOpenDoor();
+				}
+				if(Mathf.Round(go.transform.localRotation.eulerAngles.y) == 180){
+					iTween.RotateAdd(go, iTween.Hash("y", -130, "time", 2));
+					soundHandler.playOpenDoor();
+				}
+			}
+		}
 	}
 
 	public void onLookingNorth(){

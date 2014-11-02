@@ -397,7 +397,7 @@ Tiddler
 p132
 (dp133
 g21
-VEntered office. Search for documents.
+VThis is the office. Luckily someone forgot to lock the door.
 p134
 sg23
 Voffice
@@ -406,12 +406,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I16
-I26
-I57
-I5
-I305
+I2
+I17
+I9
+I17
+I6
+I306
 I0
 tp136
 (dp137
@@ -447,7 +447,7 @@ Tiddler
 p147
 (dp148
 g21
-VEntered library. Search for index.\u000a\u000a
+VThis is the school library.\u000a\u000a
 p149
 sg23
 Vlibrary
@@ -456,12 +456,12 @@ sg25
 g26
 ((I2014
 I11
+I2
+I17
+I9
 I1
-I16
-I30
-I44
-I5
-I305
+I6
+I306
 I0
 tp151
 (dp152
@@ -489,15 +489,15 @@ g14
 I00
 sg15
 (lp161
-F1199.0
-aF27.0
+F1489.0
+aF17.0
 asg17
 (itiddlywiki
 Tiddler
 p162
 (dp163
 g21
-VArrived at basement door.\u000aHmm... what is that sound? Some sort of code?\u000a\u000aGo to library again.
+VArrived at basement door.\u000aHmm... what is that sound? \u000a\u000aSome sort of morse code?\u000a\u000a[[There's an old rusty pad lock on the door looks like it hasn't been open in years|padlock]]\u000a
 p164
 sg23
 Vbasement door reality
@@ -506,12 +506,12 @@ sg25
 g26
 ((I2014
 I11
-I1
+I2
 I17
-I56
-I33
-I5
-I305
+I24
+I54
+I6
+I306
 I0
 tp166
 (dp167
@@ -539,15 +539,15 @@ g14
 I00
 sg15
 (lp176
-I1548
-aI23
+I165
+aI743
 asg17
 (itiddlywiki
 Tiddler
 p177
 (dp178
 g21
-VThere's a closet with an old combination padlock. Numbers are worn off and letters have been scratched in instead.\u000a<<unity 'STORY' stopMovement "">>\u000a\u000a<<textinput $combination>> [[Enter|enter combination]]\u000a\u000a[[Leave it for now|leave lock]]\u000a
+VThere's a closet with an old combination padlock. Numbers are worn off and letters have been scratched in instead.\u000a<<unity 'STORY' stopMovement "">>\u000a\u000a
 p179
 sg23
 Vcloset
@@ -556,12 +556,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I31
-I43
-I5
-I305
+I2
+I17
+I22
+I39
+I6
+I306
 I0
 tp181
 (dp182
@@ -589,15 +589,15 @@ g14
 I00
 sg15
 (lp191
-I1735
-aI29
+I1671
+aI27
 asg17
 (itiddlywiki
 Tiddler
 p192
 (dp193
 g21
-VReturned to basement door, opened it (skipping to basement part, End for now)\u000a\u000a<<unity 'STORY' stopMovement "">>
+VEntering basement (Skipping to basement part, End for now)\u000a\u000a<<unity 'STORY' stopMovement "">>
 p194
 sg23
 Vunlock basement
@@ -606,12 +606,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I19
-I3
-I16
-I5
-I305
+I2
+I17
+I24
+I40
+I6
+I306
 I0
 tp196
 (dp197
@@ -739,8 +739,8 @@ g14
 I00
 sg15
 (lp236
-F1365.0
-aF25.0
+F1149.0
+aF9.0
 asg17
 (itiddlywiki
 Tiddler
@@ -1141,8 +1141,8 @@ g14
 I00
 sg15
 (lp357
-I1367
-aI202
+I1151
+aI186
 asg17
 (itiddlywiki
 Tiddler
@@ -1191,8 +1191,8 @@ g14
 I00
 sg15
 (lp372
-F1369.0
-aF365.0
+F1153.0
+aF349.0
 asg17
 (itiddlywiki
 Tiddler
@@ -1241,15 +1241,15 @@ g14
 I00
 sg15
 (lp387
-I1043
-aI24
+I1333
+aI15
 asg17
 (itiddlywiki
 Tiddler
 p388
 (dp389
 g21
-VDoor looks different, that number isn't usually there.\u000a\u000a[[Wake up from nightmare|wake up]]\u000a\u000a
+VDoor looks different, that number isn't usually there.\u000a<<unity 'STORY' stopMovement "">>\u000a[[Wake up from nightmare|wake up]]\u000a\u000a
 p390
 sg23
 Vbasement door nightmare
@@ -1258,12 +1258,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I5
-I42
-I5
-I305
+I2
+I17
+I36
+I36
+I6
+I306
 I0
 tp392
 (dp393
@@ -1288,18 +1288,18 @@ tp399
 Rp400
 sbsa(dp401
 g14
-I00
+I01
 sg15
 (lp402
-F1043.0
-aF174.0
+F1333.0
+aF165.0
 asg17
 (itiddlywiki
 Tiddler
 p403
 (dp404
 g21
-V(back in library)\u000a\u000a<<unity 'STORY' hideNightmareWorld "">>
+V(back in library)\u000a\u000a<<unity 'STORY' hideNightmareWorld "">>\u000a<<unity 'STORY' startMovement "">>
 p405
 sg23
 Vwake up
@@ -1308,12 +1308,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I5
-I49
-I5
-I305
+I2
+I17
+I36
+I46
+I6
+I306
 I0
 tp407
 (dp408
@@ -1341,15 +1341,15 @@ g14
 I00
 sg15
 (lp417
-F1548.0
-aF210.0
+F1563.0
+aF340.0
 asg17
 (itiddlywiki
 Tiddler
 p418
 (dp419
 g21
-V<<if $combination is "xxx">> \u000aThe lock opens and you find a key. Go to the basement.\u000a<<unity 'STORY' pickUpKey "">>\u000a<<unity 'STORY' startMovement "">>\u000a<<else>>\u000aThe lock doesn't budge. [[Try again|closet]]\u000a<<endif>>
+V<<if $combination is "xxx">> \u000aThe lock opens and you find a key. Go to the basement.\u000a/%<<unity 'STORY' pickUpKey "">>%/\u000a[[No way back now|unlock basement]]\u000a<<unity 'STORY' startMovement "">>\u000a<<else>>\u000aThe lock doesn't budge. [[Try again|padlock]]\u000a<<endif>>
 p420
 sg23
 Venter combination
@@ -1358,12 +1358,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I18
-I36
-I5
-I305
+I2
+I17
+I24
+I25
+I6
+I306
 I0
 tp422
 (dp423
@@ -1391,8 +1391,8 @@ g14
 I00
 sg15
 (lp432
-F1547.0
-aF368.0
+F1416.0
+aF339.0
 asg17
 (itiddlywiki
 Tiddler
@@ -1441,8 +1441,8 @@ g14
 I00
 sg15
 (lp447
-F1105.0
-aF542.0
+F1005.0
+aF83.0
 asg17
 (itiddlywiki
 Tiddler
@@ -1488,7 +1488,7 @@ tp459
 Rp460
 sbsa(dp461
 g14
-I01
+I00
 sg15
 (lp462
 F172.0
@@ -1686,10 +1686,110 @@ tp517
 (dp518
 tp519
 Rp520
+sbsa(dp521
+g14
+I00
+sg15
+(lp522
+I681
+aI164
+asg17
+(itiddlywiki
+Tiddler
+p523
+(dp524
+g21
+VThis is the door to the basement. I've never been down there, but I'm sure there's nothing I need.
+p525
+sg23
+Vbasement door
+p526
+sg25
+g26
+((I2014
+I11
+I2
+I17
+I13
+I4
+I6
+I306
+I0
+tp527
+(dp528
+tp529
+Rp530
+sg31
+(lp531
+sg33
+g26
+((I2014
+I11
+I2
+I17
+I12
+I27
+I6
+I306
+I0
+tp532
+(dp533
+tp534
+Rp535
+sbsa(dp536
+g14
+I00
+sg15
+(lp537
+F1496.0
+aF171.0
+asg17
+(itiddlywiki
+Tiddler
+p538
+(dp539
+g21
+V<<unity 'STORY' stopMovement "">>\u000a\u000aThat's weird. All the numbers are worn off and someone has edged letters into the knob instead.\u000a\u000aI guess I could give it a shot...\u000a\u000a<<textinput $combination>> [[Try it|enter combination]]\u000a\u000a[[Leave it for now|leave lock]]
+p540
+sg23
+Vpadlock
+p541
+sg25
+g26
+((I2014
+I11
+I2
+I17
+I21
+I33
+I6
+I306
+I0
+tp542
+(dp543
+tp544
+Rp545
+sg31
+(lp546
+sg33
+g26
+((I2014
+I11
+I2
+I17
+I19
+I41
+I6
+I306
+I0
+tp547
+(dp548
+tp549
+Rp550
 sbsasS'scale'
-p521
+p551
 I1
 sS'snapping'
-p522
+p552
 I00
 ss.

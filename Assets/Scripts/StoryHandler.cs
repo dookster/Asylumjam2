@@ -28,17 +28,24 @@ public class StoryHandler : MonoBehaviour {
 
 	public int currentQuest = -1;
 
+	public AudioClip normalAmbience;
+	public AudioClip nightmareAmbience;
+
+	private AudioSource audioSource;
 	private Player player;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Player>() as Player;
 		if(player == null) Debug.Log("ERROR: NO PLAYER");
+		audioSource = GetComponent<AudioSource>() as AudioSource;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if(Input.GetButtonUp("Use")){
+			showNightmareWorld();
+		}
 	}
 
 	/***********************************************************
@@ -102,23 +109,114 @@ public class StoryHandler : MonoBehaviour {
 			}
 		}
 
-		if(tileName == "Closet"){
+
+		if(tileName == "Basement"){
 			switch(direction){			
 			case EVENT_NORTH:
+				if(currentQuest == Q_NIGHTMARE_FIND_BASEMENT_DOOR){
+					twineDisplay("basement door nightmare");
+				} else if (currentQuest == Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY) {
+					twineDisplay("basement door reality");
+				} else {
+					twineDisplay("basement door");
+				}
 				break;
 			case EVENT_SOUTH:
-				if(currentQuest == Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY){
-					twineDisplay("closet");
-				}
 				break;
 			case EVENT_EAST:
 				break;
-			case EVENT_WEST:			
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+
+//		if(tileName == "Closet"){
+//			switch(direction){			
+//			case EVENT_NORTH:
+//				break;
+//			case EVENT_SOUTH:
+//				if(currentQuest == Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY){
+//					twineDisplay("closet");
+//				}
+//				break;
+//			case EVENT_EAST:
+//				break;
+//			case EVENT_WEST:			
+//				break;
+//			}
+//		}
+
+
+		// Doors
+		if(tileName == "ClassDoor1"){
+			switch(direction){			
+			case EVENT_EAST:
+				player.currentTile.openDoor();
+				player.currentTile.blockEast = false;
+				break;
+			}
+		}
+		if(tileName == "ClassDoor2"){
+			switch(direction){
+			case EVENT_WEST:
+				player.currentTile.openDoor();
+				player.currentTile.blockWest = false;
+				break;
+			}
+		}
+		if(tileName == "ClassDoor3"){
+			switch(direction){			
+			case EVENT_EAST:
+				player.currentTile.openDoor();
+				player.currentTile.blockEast = false;
+				break;
+			}
+		}
+		if(tileName == "ClassDoor4"){
+			switch(direction){			
+			case EVENT_EAST:
+				player.currentTile.openDoor();
+				player.currentTile.blockEast = false;
+				break;
+			}
+		}
+		if(tileName == "ClassDoor5"){
+			switch(direction){			
+			case EVENT_EAST:
+				player.currentTile.openDoor();
+				player.currentTile.blockEast = false;
+				break;
+			}
+		}
+		if(tileName == "OfficeDoor"){
+			switch(direction){			
+			case EVENT_SOUTH:
+				player.currentTile.openDoor();
+				player.currentTile.blockSouth = false;
+				twineDisplay("office");
+				break;
+			}
+		}
+		if(tileName == "LibraryDoor"){
+			switch(direction){			
+			case EVENT_WEST:
+				player.currentTile.openDoor();
+				player.currentTile.blockWest = false;
+				twineDisplay("library");
+				break;
+			}
+		}
+		if(tileName == "LoungeDoor"){
+			switch(direction){			
+			case EVENT_WEST:
+				//player.currentTile.openDoor();
+				//player.currentTile.blockWest = false;
 				break;
 			}
 		}
 	}
-
+	
 	/***********************************************************
 	 * 
 	 * MOVEMENT
@@ -166,8 +264,8 @@ public class StoryHandler : MonoBehaviour {
 			switch(eventType){
 			case EVENT_ENTER:
 				if(currentQuest == Q_FIND_PAPERS){
-					twineDisplay("office");
 				}
+				//twineDisplay("office");
 				break;
 			case EVENT_EXIT:
 				break;
@@ -185,7 +283,7 @@ public class StoryHandler : MonoBehaviour {
 		if(tileName == "Library"){
 			switch(eventType){
 			case EVENT_ENTER:
-				twineDisplay("library");
+				//twineDisplay("library");
 				break;
 			case EVENT_EXIT:
 				break;
@@ -203,11 +301,11 @@ public class StoryHandler : MonoBehaviour {
 		if(tileName == "Basement"){
 			switch(eventType){
 			case EVENT_ENTER:
-				if(currentQuest == Q_NIGHTMARE_FIND_BASEMENT_DOOR){
-					twineDisplay("basement door nightmare");
-				} else if (currentQuest == Q_ENTER_BASEMENT) {
-					twineDisplay("unlock basement");
-				}
+				//if(currentQuest == Q_NIGHTMARE_FIND_BASEMENT_DOOR){
+				//	twineDisplay("basement door nightmare");
+				//} else if (currentQuest == Q_ENTER_BASEMENT) {
+				//	twineDisplay("unlock basement");
+				//}
 				break;
 			case EVENT_EXIT:
 				break;
@@ -237,15 +335,22 @@ public class StoryHandler : MonoBehaviour {
 
 	private void showNightmareWorld(){
 		currentQuest = Q_NIGHTMARE_FIND_BASEMENT_DOOR;
+		audioSource.clip = nightmareAmbience;
+		audioSource.Play();
+		RenderSettings.fog = true;
 	}
 
 	private void hideNightmareWorld(){
 		currentQuest = Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY;
+		player.transform.position = new Vector3(-12.5f, 0f, -17.5f);
+		audioSource.clip = normalAmbience;
+		audioSource.Play();
+		RenderSettings.fog = false;
 	}
 
-	private void pickUpKey(){
-		currentQuest = Q_ENTER_BASEMENT;
-	}
+//	private void pickUpKey(){
+//		currentQuest = Q_ENTER_BASEMENT;
+//	}
 
 	private void twineDisplay(string passageName){
 		Application.ExternalCall("TwineDisplay", passageName);

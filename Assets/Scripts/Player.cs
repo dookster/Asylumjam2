@@ -21,11 +21,13 @@ public class Player : MonoBehaviour {
 	private const int LEFT = 1;
 	private const int RIGHT = 2;
 
+	private bool usePressed;
+
 	private int nextMove = -1;
 
 	private StoryHandler storyHandler;
 
-	private TileBase currentTile;
+	public TileBase currentTile;
 
 	// Use this for initialization
 	void Start () {
@@ -35,10 +37,11 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(allowMovement)
-			uiArrows.SetActive(true);
-		else
-			uiArrows.SetActive(false);
+//		if(allowMovement)
+//			uiArrows.SetActive(true);
+//		else
+//			uiArrows.SetActive(false);
+
 
 		if(allowMovement) {
 			Ray clickRay = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -219,7 +222,6 @@ public class Player : MonoBehaviour {
 		if(allowMovement)
 			nextMove = FORWARD;
 	}
-
 
 	void OnDrawGizmos() {
 

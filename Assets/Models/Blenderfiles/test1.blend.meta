@@ -12,6 +12,19 @@ ModelImporter:
     100012: Cube_005
     100014: Cube_006
     100016: Cube_007
+    100018: blackboard
+    100020: door
+    100022: floor
+    100024: frame_large
+    100026: frame_small
+    100028: table
+    100030: table_001
+    100032: table_big
+    100034: Tree
+    100036: wall
+    100038: wall3
+    100040: table_big_001
+    100042: wall_001
     400000: //RootNode
     400002: Cube
     400004: Cube_001
@@ -21,6 +34,19 @@ ModelImporter:
     400012: Cube_005
     400014: Cube_006
     400016: Cube_007
+    400018: blackboard
+    400020: door
+    400022: floor
+    400024: frame_large
+    400026: frame_small
+    400028: table
+    400030: table_001
+    400032: table_big
+    400034: Tree
+    400036: wall
+    400038: wall3
+    400040: table_big_001
+    400042: wall_001
     2300000: //RootNode
     2300002: Cube
     2300004: Cube_001
@@ -30,6 +56,19 @@ ModelImporter:
     2300012: Cube_005
     2300014: Cube_006
     2300016: Cube_007
+    2300018: blackboard
+    2300020: door
+    2300022: floor
+    2300024: frame_large
+    2300026: frame_small
+    2300028: table
+    2300030: table_001
+    2300032: table_big
+    2300034: Tree
+    2300036: wall
+    2300038: wall3
+    2300040: table_big_001
+    2300042: wall_001
     3300000: //RootNode
     3300002: Cube
     3300004: Cube_001
@@ -39,6 +78,19 @@ ModelImporter:
     3300012: Cube_005
     3300014: Cube_006
     3300016: Cube_007
+    3300018: blackboard
+    3300020: door
+    3300022: floor
+    3300024: frame_large
+    3300026: frame_small
+    3300028: table
+    3300030: table_001
+    3300032: table_big
+    3300034: Tree
+    3300036: wall
+    3300038: wall3
+    3300040: table_big_001
+    3300042: wall_001
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_006
@@ -47,6 +99,19 @@ ModelImporter:
     4300010: Cube_003
     4300012: Cube_002
     4300014: Cube_007
+    4300016: table_001
+    4300018: table_big
+    4300020: table
+    4300022: blackboard
+    4300024: wall3
+    4300026: Tree
+    4300028: floor
+    4300030: frame_large
+    4300032: frame_small
+    4300034: door
+    4300036: wall
+    4300038: table_big_001
+    4300040: wall_001
     7400000: Default Take
     9500000: //RootNode
   materials:
