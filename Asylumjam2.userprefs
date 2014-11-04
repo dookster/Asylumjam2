@@ -2,13 +2,14 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\StoryHandler.cs">
     <Files>
-      <File FileName="Assets\Scripts\SoundHandler.cs" Line="25" Column="65" />
-      <File FileName="Assets\Scripts\StoryHandler.cs" Line="51" Column="4" />
-      <File FileName="Assets\Scripts\TileBase.cs" Line="12" Column="23" />
+      <File FileName="Assets\Scripts\SoundHandler.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\StoryHandler.cs" Line="324" Column="35" />
+      <File FileName="Assets\Scripts\TileBase.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\EditSnapToGrid.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="44" Column="3" />
-      <File FileName="C:\Program Files (x86)\Twine\targets\sugarcane\header.html" Line="164" Column="16" />
+      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
+      <File FileName="C:\Program Files (x86)\Twine\targets\sugarcane\header.html" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CarStory.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SlamDoor.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

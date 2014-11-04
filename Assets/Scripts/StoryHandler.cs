@@ -319,8 +319,10 @@ public class StoryHandler : MonoBehaviour {
 		if(tileName == "Start"){
 			switch(eventType){
 			case EVENT_ENTER:
-				twineDisplay("enter school");
-				currentQuest = Q_FIND_PAPERS;
+				if(currentQuest == -1){
+					twineDisplay("enter school");
+					currentQuest = Q_FIND_PAPERS;
+				}
 				break;
 			case EVENT_EXIT:
 				break;
@@ -406,14 +408,14 @@ public class StoryHandler : MonoBehaviour {
 
 
 
-
+	private GameObject[] largeTables;
 
 	public void showNightmareWorld(){
 		currentQuest = Q_NIGHTMARE_FIND_BASEMENT_DOOR;
 		audioSource.clip = nightmareAmbience;
 		audioSource.Play();
 		monoliths.SetActive(true);
-		GameObject[] largeTables = GameObject.FindGameObjectsWithTag("largetable");
+		largeTables = GameObject.FindGameObjectsWithTag("largetable");
 		foreach(GameObject table in largeTables){
 			table.SetActive(false);
 		}
@@ -427,7 +429,6 @@ public class StoryHandler : MonoBehaviour {
 		audioSource.clip = normalAmbience;
 		audioSource.Play();
 		monoliths.SetActive(false);
-		GameObject[] largeTables = GameObject.FindGameObjectsWithTag("largetable");
 		foreach(GameObject table in largeTables){
 			table.SetActive(true);
 		}
@@ -464,6 +465,6 @@ public class StoryHandler : MonoBehaviour {
 	/////////////////////////
 
 	void OnGUI() {
-		GUI.Label(new Rect(10, 10, 300, 300), "Current quest: " + currentQuest);		
+		//GUI.Label(new Rect(10, 10, 300, 300), "Current quest: " + currentQuest);		
 	}
 }

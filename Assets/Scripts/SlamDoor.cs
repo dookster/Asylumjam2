@@ -3,6 +3,8 @@ using System.Collections;
 
 public class SlamDoor : MonoBehaviour {
 
+	public GameObject blackout;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -16,8 +18,13 @@ public class SlamDoor : MonoBehaviour {
 	}
 
 	public void slamDoor(){
-		iTween.RotateAdd(gameObject, iTween.Hash("y", -110, "time", 0.3f, "easetype", "easeInQuad"));
+		iTween.RotateAdd(gameObject, iTween.Hash("y", -110, "time", 0.3f, "easetype", "easeInQuad", "oncomplete", "black", "oncompletetarget", gameObject));
 		AudioSource audioSource =  GetComponent<AudioSource>() as AudioSource;
 		audioSource.PlayDelayed(0.1f);
 	}
+
+	private void black(){
+		blackout.SetActive(true);
+	}
+
 }

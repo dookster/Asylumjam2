@@ -37,7 +37,7 @@ p18
 (dp20
 S'text'
 p21
-V(Intro driving back to school late at night...)\u000a\u000aSwitch channel?\u000a[[First]]\u000a[[Second]]\u000a[[Off]]
+VFirst day at work and I'm already behind. There's a new kid starting tomorrow and I forgot to fill out the rest of his papers. If don't make sure his papers are filed before the secretary comes in it wont look good. \u000a\u000aThat secretary at the principal's office didn't exactly seem like the forgiving type. Perhaps she was hired back when... well before they took down all the religious stuff. Not that I'd mind a place with a little more discipline.\u000a\u000aI just hope the one key they gave me will open the main doors.\u000a\u000a[[Just gotta stay awake|radio]]\u000a
 p22
 sS'title'
 p23
@@ -51,9 +51,9 @@ p26
 ((I2014
 I11
 I3
-I0
-I16
-I5
+I1
+I3
+I43
 I0
 I307
 I0
@@ -347,7 +347,7 @@ Tiddler
 p117
 (dp118
 g21
-VEntered the school (go to the office)\u000a[[show intro]]\u000a<<unity 'STORY' stopMovement "">>
+V<center>\u000a!Advesperation 2\u000a\u000a!![["River stones"|show intro]]\u000a</center>\u000a<<unity 'STORY' stopMovement "">>
 p119
 sg23
 Venter school
@@ -356,12 +356,12 @@ sg25
 g26
 ((I2014
 I11
-I1
 I3
-I56
-I53
-I5
-I305
+I1
+I59
+I24
+I0
+I307
 I0
 tp121
 (dp122
@@ -397,7 +397,7 @@ Tiddler
 p132
 (dp133
 g21
-VThis is the office. Luckily someone forgot to lock the door.
+VPhew. Someone forgot to lock the door to the office. I doubt my key would work here.
 p134
 sg23
 Voffice
@@ -406,12 +406,12 @@ sg25
 g26
 ((I2014
 I11
+I3
 I2
-I17
-I9
-I17
-I6
-I306
+I0
+I43
+I0
+I307
 I0
 tp136
 (dp137
@@ -489,7 +489,7 @@ g14
 I00
 sg15
 (lp161
-F1489.0
+F1498.0
 aF17.0
 asg17
 (itiddlywiki
@@ -497,7 +497,7 @@ Tiddler
 p162
 (dp163
 g21
-VArrived at basement door.\u000aHmm... what is that sound? \u000a\u000aSome sort of morse code?\u000a\u000a[[There's an old rusty pad lock on the door looks like it hasn't been open in years|padlock]]\u000a
+V<<unity 'STORY' stopMovement "">>\u000a\u000a"Hello? Anyone in there!?"\u000a\u000aPerhaps one of the kids locked themselves in. No... it's padlocked, someone must have locked them in.\u000a\u000a"Just take it easy. I'll get you out!"\u000a\u000aThey keep tapping... is that some sort of code? Can they even hear me?\u000a\u000a[[Check the padlock|padlock]]\u000a
 p164
 sg23
 Vbasement door reality
@@ -506,12 +506,12 @@ sg25
 g26
 ((I2014
 I11
+I3
 I2
-I17
-I24
-I54
-I6
-I306
+I56
+I21
+I0
+I307
 I0
 tp166
 (dp167
@@ -589,15 +589,15 @@ g14
 I00
 sg15
 (lp191
-I1697
-aI28
+I1681
+aI205
 asg17
 (itiddlywiki
 Tiddler
 p192
 (dp193
 g21
-VEntering basement...\u000a\u000a<<unity 'STORY' goToBasement "">>\u000a<<unity 'STORY' startMovement "">>\u000a
+VAnother class room!\u000a\u000aIt's filthy. Everything covered in dust, but there's tracks too. Someone was just here. \u000a\u000a"Look, kids, I'm not in the mood for pranks!"\u000a\u000aNo... it's completely empty. And why are there no chairs for the children?\u000a\u000a<<unity 'STORY' goToBasement "">>\u000a<<unity 'STORY' startMovement "">>\u000a
 p194
 sg23
 Vunlock basement
@@ -606,12 +606,12 @@ sg25
 g26
 ((I2014
 I11
-I2
-I22
-I21
-I45
-I6
-I306
+I3
+I3
+I1
+I58
+I0
+I307
 I0
 tp196
 (dp197
@@ -639,7 +639,7 @@ g14
 I00
 sg15
 (lp206
-F699.0
+F701.0
 aF27.0
 asg17
 (itiddlywiki
@@ -647,7 +647,7 @@ Tiddler
 p207
 (dp208
 g21
-VGot documents (go to library)
+VHere we are. \u000a\u000a...\u000a\u000aSeems more or less in order actually, I just need to write in the proper classes for little Mr. Baumann's first time here.\u000a\u000aWait a minute. Baumann... that's a bit of a coincidence. Not many German descendants around here. Could he be related to Anne? I mean the age is right for a young son I suppose. But she'd had to have given him her name. No, it says both his parents are former students here. \u000a\u000aAnne was my best friend in school, and I we didn't go to this one. And [[why|documents2]] on earth would she return to this town with her family?\u000a\u000a<<unity 'STORY' stopMovement "">>
 p209
 sg23
 Vfound documents
@@ -656,12 +656,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I16
-I27
-I31
-I5
-I305
+I3
+I2
+I22
+I48
+I0
+I307
 I0
 tp211
 (dp212
@@ -689,15 +689,15 @@ g14
 I00
 sg15
 (lp221
-F862.0
-aF444.0
+F919.0
+aF630.0
 asg17
 (itiddlywiki
 Tiddler
 p222
 (dp223
 g21
-VDo nightmare stuff. (Go to the basement door)\u000a\u000a<<unity 'STORY' showNightmareWorld "">>\u000a<<unity 'STORY' startMovement "">>
+VHuh?\u000a\u000aWhat did...\u000a\u000aShit! What time is it? I must have fallen asleep. But... why is it so dark? The lights are still on.\u000a\u000aWhat's that sound? No... not a sound. More like a cool pull. It's under the floor, under... \u000a\u000aThere's something I havent checked out yet.\u000a\u000a<<unity 'STORY' showNightmareWorld "">>\u000a<<unity 'STORY' startMovement "">>
 p224
 sg23
 Vnightmare
@@ -706,12 +706,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I23
-I26
-I5
-I305
+I3
+I3
+I40
+I22
+I0
+I307
 I0
 tp226
 (dp227
@@ -747,7 +747,7 @@ Tiddler
 p237
 (dp238
 g21
-VReturned to library index.\u000a\u000aEnter query:\u000a<<textinput $searchString2>> [[Enter|enter code search]]\u000a\u000a[[Leave the index alone|leave index]]\u000a<<unity 'STORY' stopMovement "">>\u000a
+VSearch for something else in the archives?\u000a\u000a<<textinput $searchString2>> [[Enter|enter code search]]\u000a\u000a[[Leave the index alone|leave index]]\u000a<<unity 'STORY' stopMovement "">>\u000a
 p239
 sg23
 Vlibrary index 2
@@ -756,12 +756,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I33
-I16
-I5
-I305
+I3
+I3
+I41
+I56
+I0
+I307
 I0
 tp241
 (dp242
@@ -789,15 +789,15 @@ g14
 I00
 sg15
 (lp251
-F358.0
-aF166.0
+F361.0
+aF158.0
 asg17
 (itiddlywiki
 Tiddler
 p252
 (dp253
 g21
-V(go to office)\u000a<<unity 'STORY' startMovement "">>\u000a\u000a\u000a
+VThe key worked. And just in time... it's really pouring out there.\u000a\u000aI left the papers down at the office. Just needs a few ticks in the right boxes and the new kid will get a proper welcome tomorrow. And I wont get in trouble with the secretary on my second day.\u000a\u000a//Move around with arrows or W,A,D. Open doors and use/look with space or ctrl.//\u000a\u000a<<unity 'STORY' startMovement "">>\u000a\u000a\u000a
 p254
 sg23
 Vshow intro
@@ -806,12 +806,12 @@ sg25
 g26
 ((I2014
 I11
+I3
+I2
 I1
-I16
-I17
-I33
-I5
-I305
+I27
+I0
+I307
 I0
 tp256
 (dp257
@@ -847,7 +847,7 @@ Tiddler
 p267
 (dp268
 g21
-VReading essays, skip to [[nightmare]]\u000a
+VThere's a number of short assignments written in the style of a diary. It doesn't make sense. She seems to have started here just after the accident, but she doesn't mention it with a single word.\u000a\u000aOr me for that matter.\u000a\u000a[[Look for more|essays2]]\u000a\u000a
 p269
 sg23
 Vfound essays
@@ -856,12 +856,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I4
-I28
-I5
-I305
+I3
+I3
+I38
+I27
+I0
+I307
 I0
 tp271
 (dp272
@@ -1042,14 +1042,14 @@ I00
 sg15
 (lp327
 F861.0
-aF168.0
+aF169.0
 asg17
 (itiddlywiki
 Tiddler
 p328
 (dp329
 g21
-V\u000a<<if $searchString is "Hansen" or $searchString is "hansen">> \u000aThere's something about <<print $searchString>>!\u000a[[Read the essay|found essays]]\u000a<<else>>\u000aYou couldn't find anything about <<print $searchString>>.\u000a[[library index]]\u000a<<endif>>
+V\u000a<<if $searchString is "Baumann" or $searchString is "baumann">> \u000aBaumann, Baumann... here we go. \u000a\u000aNo way. This is definitely not a coincidence. There's a thick file full of years of essays and science reports, all signed 'Anne Baumann'!\u000a\u000aThis makes no sense. How could she have gone to this school for years without ever running in to me in town?\u000a\u000a[[Pick something at random|found essays]]\u000a<<else>>\u000aYou couldn't find anything interesting about <<print $searchString>>.\u000a\u000a[[Try something else|library index]]\u000a<<endif>>
 p330
 sg23
 Venter name
@@ -1058,12 +1058,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I23
-I12
-I5
-I305
+I3
+I3
+I36
+I58
+I0
+I307
 I0
 tp332
 (dp333
@@ -1099,7 +1099,7 @@ Tiddler
 p343
 (dp344
 g21
-VFound library index.\u000a\u000aEnter query (clue is Hansen):\u000a<<textinput $searchString>> [[Enter|enter name]]\u000a\u000a[[Leave the index alone|leave index]]\u000a\u000a<<unity 'STORY' stopMovement "">>
+VHere we go. These are supposed to hold all sorts of old assignments. I guess they only store the good ones.\u000a\u000aIt's all neatly sorted by author, but what should I look for? <<textinput $searchString>> \u000a[[Search|enter name]]\u000a\u000a[[Leave the archives alone|leave index]]\u000a\u000a<<unity 'STORY' stopMovement "">>
 p345
 sg23
 Vlibrary index
@@ -1108,12 +1108,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I32
-I37
-I5
-I305
+I3
+I2
+I23
+I48
+I0
+I307
 I0
 tp347
 (dp348
@@ -1149,7 +1149,7 @@ Tiddler
 p358
 (dp359
 g21
-V<<if $searchString2 is "Morse" or $searchString is "Morse code">> \u000aYou find an old scout pamphlet about morse code!\u000a[[Read pamphlet|morse code]]\u000a<<else>>\u000aYou couldn't find anything about <<print $searchString2>>.\u000a[[library index 2]]\u000a<<endif>>
+V<<if $searchString2 is "Morse" or $searchString is "Morse code" or $searchString is "morse code" or $searchString is "morse">> \u000aThere's another old diary essay. Some kid going on about how much he's learned as a boy scout. \u000aWhat's this? An old scout pamphlet about morse code!\u000a\u000a[[Read pamphlet|morse code]]\u000a<<else>>\u000aYou couldn't find anything about <<print $searchString2>>.\u000a[[Try something else|library index 2]]\u000a<<endif>>
 p360
 sg23
 Venter code search
@@ -1158,12 +1158,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I38
-I25
-I5
-I305
+I3
+I3
+I42
+I58
+I0
+I307
 I0
 tp362
 (dp363
@@ -1199,7 +1199,7 @@ Tiddler
 p373
 (dp374
 g21
-VThis is morse code! ::\u000a[img[morse]]\u000a\u000a<<unity 'STORY' startMovement "">>
+VMorse code alphabet:\u000a\u000a[img[morse]]\u000a\u000a<<unity 'STORY' startMovement "">>
 p375
 sg23
 Vmorse code
@@ -1209,9 +1209,9 @@ g26
 ((I2014
 I11
 I3
-I0
-I13
-I53
+I3
+I43
+I28
 I0
 I307
 I0
@@ -1249,7 +1249,7 @@ Tiddler
 p388
 (dp389
 g21
-VDoor looks different, that number isn't usually there.\u000a<<unity 'STORY' stopMovement "">>\u000a[[Wake up from nightmare|wake up]]\u000a\u000a
+VIt's louder towards the door. I mean... the door feels colder... I think. Where was I?\u000a\u000aThat [[sign|nightmare2]] wasn't on the door before. \u000a\u000a\u000a<<unity 'STORY' stopMovement "">>\u000a\u000a
 p390
 sg23
 Vbasement door nightmare
@@ -1258,12 +1258,12 @@ sg25
 g26
 ((I2014
 I11
+I3
 I2
-I17
-I36
-I36
-I6
-I306
+I49
+I38
+I0
+I307
 I0
 tp392
 (dp393
@@ -1291,15 +1291,15 @@ g14
 I00
 sg15
 (lp402
-F1333.0
-aF165.0
+F1325.0
+aF348.0
 asg17
 (itiddlywiki
 Tiddler
 p403
 (dp404
 g21
-V(back in library)\u000a\u000a<<unity 'STORY' hideNightmareWorld "">>\u000a<<unity 'STORY' startMovement "">>
+VGah!\u000a\u000aDream. It was just another stupid nightmare. Gotta pull myself together.\u000a\u000aSuch a weird sound... or whatever it was. And that door. Could it really be..?\u000a\u000a<<unity 'STORY' hideNightmareWorld "">>\u000a<<unity 'STORY' startMovement "">>
 p405
 sg23
 Vwake up
@@ -1308,12 +1308,12 @@ sg25
 g26
 ((I2014
 I11
+I3
 I2
-I17
-I36
-I46
-I6
-I306
+I52
+I39
+I0
+I307
 I0
 tp407
 (dp408
@@ -1338,18 +1338,18 @@ tp414
 Rp415
 sbsa(dp416
 g14
-I01
+I00
 sg15
 (lp417
-F1567.0
-aF354.0
+F1671.0
+aF43.0
 asg17
 (itiddlywiki
 Tiddler
 p418
 (dp419
 g21
-V<<if $combination is "min" or $combination is "MIN">> \u000aThe padlock opens with a loud *chunk* and falls to the floor. Just a little push swing the door open, the dim light from the hall swallowed by the darkness of the staircase below.\u000a/%<<unity 'STORY' pickUpKey "">>%/\u000a[[No way back now...|unlock basement]]\u000a<<else>>\u000aThe lock doesn't budge. [[Try again|padlock]]\u000a<<endif>>
+V<<if $combination is "min" or $combination is "MIN">> \u000aThe padlock opens with a loud *chunk* and falls to the floor. Just a little push swings the door open, the dim light from the hall swallowed by the darkness of the staircase below.\u000a\u000aSoft, cold air sweeps in around my legs. Pulling me forward. \u000a\u000a"Hello?" \u000a\u000aThere's no one here.\u000a\u000a/%<<unity 'STORY' pickUpKey "">>%/\u000a[[No way back now...|unlock basement]]\u000a<<else>>\u000aThe lock doesn't budge. [[Try again|padlock]]\u000a<<endif>>
 p420
 sg23
 Venter combination
@@ -1359,9 +1359,9 @@ g26
 ((I2014
 I11
 I3
-I0
-I41
-I14
+I2
+I58
+I44
 I0
 I307
 I0
@@ -1391,8 +1391,8 @@ g14
 I00
 sg15
 (lp432
-F1416.0
-aF339.0
+F1496.0
+aF363.0
 asg17
 (itiddlywiki
 Tiddler
@@ -1449,7 +1449,7 @@ Tiddler
 p448
 (dp449
 g21
-VYou leave the index\u000a<<unity 'STORY' startMovement "">>
+VLeaving the archives alone for now.\u000a<<unity 'STORY' startMovement "">>
 p450
 sg23
 Vleave index
@@ -1458,12 +1458,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I32
-I56
-I5
-I305
+I3
+I3
+I43
+I57
+I0
+I307
 I0
 tp452
 (dp453
@@ -1491,15 +1491,15 @@ g14
 I00
 sg15
 (lp462
-F172.0
-aF280.0
+F138.0
+aF446.0
 asg17
 (itiddlywiki
 Tiddler
 p463
 (dp464
 g21
-VHmm... what's this? Sounds like some local channel...\u000a\u000aSwitch channel?\u000a[[First]]\u000a[[Off]]
+VStrange. I was sure the local station was still going. Perhaps it's at a different freq...\u000a\u000a"PRAISE THE LORD!"\u000a\u000a  Ah... there we go. Must have given the locals some talking time late at night.\u000a\u000a"AND PRAISE HIS HUMBLE SERVANT OUR PROTECTOR AND GUIDE ST. NIM!"\u000a\u000a Nothing much has changed since I was a kid it seems. Nim this, Nim that. I don't know of any other towns adopting an unrecognized saint like this. The humble cripple St. Nim.\u000a\u000a[[Keep listening|second2]]\u000a\u000a[[Try channel One|First]]\u000a[[Turn it off|Off]]\u000a
 p465
 sg23
 VSecond
@@ -1508,12 +1508,12 @@ sg25
 g26
 ((I2014
 I11
+I3
 I1
-I21
-I17
-I19
-I5
-I305
+I20
+I39
+I0
+I307
 I0
 tp467
 (dp468
@@ -1538,18 +1538,18 @@ tp474
 Rp475
 sbsa(dp476
 g14
-I00
+I01
 sg15
 (lp477
-F179.0
-aF416.0
+F159.0
+aF870.0
 asg17
 (itiddlywiki
 Tiddler
 p478
 (dp479
 g21
-VNo, silence is better. \u000a\u000a[[I'll be there in a minute anyway.|go to school]]
+VAh, silence is a bit better. As long as I don't fall asleep.\u000a\u000aI mean... not that crashing into a tree isn't bad enough, but I don't need any more [[nightmares|remember nightmare]] either.\u000a\u000a\u000a\u000a
 p480
 sg23
 VOff
@@ -1558,12 +1558,12 @@ sg25
 g26
 ((I2014
 I11
+I3
 I1
-I21
-I13
-I38
-I5
-I305
+I52
+I53
+I0
+I307
 I0
 tp482
 (dp483
@@ -1591,15 +1591,15 @@ g14
 I00
 sg15
 (lp492
-F170.0
-aF144.0
+F148.0
+aF297.0
 asg17
 (itiddlywiki
 Tiddler
 p493
 (dp494
 g21
-VNight radio is fine. There's usually some debate, even if the crazies tend to call in when it gets late.\u000a\u000aSwitch channel?\u000a[[Second]]\u000a[[Off]]
+V"Alright I think I have Jim on the line. So do you have a question for our guest this evening?"\u000a\u000a"Yeah thanks, Linda. No questions from me but I have a thing or two that suit in your studio needs hear. I've lived in this town all my life and I have nothing but good things to say about our church. They've run that school for as long as it's been there. They built it for Christ's sake! ... pardon. Now I don't believe in all that hocus pocus, mind, but if listening to a few fairy tales means our kids stay out of trouble that's fine by me!"\u000a\u000a"Well that's one way to look at it I suppose. What do you think about that Mr. Williams?"\u000a\u000a"Well Linda..."\u000a\u000a----\u000a\u000aUgh. I can't stand listening to that guy...\u000a\u000aSwitch channel:\u000a[[Try that local one|Second]]\u000a[[Just turn it off|Off]]
 p495
 sg23
 VFirst
@@ -1608,12 +1608,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I21
-I17
-I13
-I5
-I305
+I3
+I18
+I14
+I8
+I0
+I307
 I0
 tp497
 (dp498
@@ -1641,8 +1641,8 @@ g14
 I00
 sg15
 (lp507
-F178.0
-aF553.0
+F528.0
+aF879.0
 asg17
 (itiddlywiki
 Tiddler
@@ -1749,7 +1749,7 @@ Tiddler
 p538
 (dp539
 g21
-V<<unity 'STORY' stopMovement "">>\u000a\u000aThat's weird. All the numbers are worn off and someone has edged letters into the knob instead.\u000a\u000aI guess I could give it a shot...\u000a\u000a<<textinput $combination>> [[Try it|enter combination]]\u000a\u000a[[Leave it for now|leave lock]]
+VOld and rusty, clearly this doesn't see much use.\u000a\u000aThat's weird. All the numbers are worn off and someone has edged letters into the knob instead. They've fitted half the alphabet on there.\u000a\u000aI guess I could give it a shot...\u000a\u000a<<textinput $combination>> [[Try it|enter combination]]\u000a\u000a[[Leave it for now|leave lock]]
 p540
 sg23
 Vpadlock
@@ -1758,12 +1758,12 @@ sg25
 g26
 ((I2014
 I11
+I3
 I2
-I17
-I21
-I33
-I6
-I306
+I56
+I56
+I0
+I307
 I0
 tp542
 (dp543
@@ -1791,8 +1791,8 @@ g14
 I00
 sg15
 (lp552
-I364
-aI441
+I362
+aI435
 asg17
 (itiddlywiki
 Tiddler
@@ -1849,7 +1849,7 @@ Tiddler
 p568
 (dp569
 g21
-VThe cafeteria is through here. Nothing I need there, and I don't think my key works here.
+VThe cafeteria is through here. Nothing I need there, and I don't think my key works here anyway.
 p570
 sg23
 Vcafeteria door
@@ -1858,12 +1858,12 @@ sg25
 g26
 ((I2014
 I11
-I2
-I21
-I1
 I3
-I6
-I306
+I2
+I1
+I50
+I0
+I307
 I0
 tp572
 (dp573
@@ -1891,8 +1891,8 @@ g14
 I00
 sg15
 (lp582
-F361.0
-aF571.0
+F367.0
+aF574.0
 asg17
 (itiddlywiki
 Tiddler
@@ -1999,7 +1999,7 @@ Tiddler
 p613
 (dp614
 g21
-V<<unity 'STORY' stopMovement "">>\u000aStacks of old yellowed papers\u000a\u000a[[Search them|look papers]]
+V<<unity 'STORY' stopMovement "">>\u000aStacks of old yellowed papers. Someone moved them recently.\u000a\u000aIt's almost all prayers. Guides for the teacher, which hymns goes with each day, how to handle difficult questions and things like that.\u000a\u000aHmm... this one is called: [["Procedures for specially devout students"|look papers]]\u000a
 p615
 sg23
 Vend papers
@@ -2008,12 +2008,12 @@ sg25
 g26
 ((I2014
 I11
-I2
-I22
-I39
-I21
-I6
-I306
+I3
+I3
+I45
+I52
+I0
+I307
 I0
 tp617
 (dp618
@@ -2041,15 +2041,15 @@ g14
 I00
 sg15
 (lp627
-F1868.0
-aF171.0
+F2028.0
+aF71.0
 asg17
 (itiddlywiki
 Tiddler
 p628
 (dp629
 g21
-VWaaaaat?\u000a\u000a[[Get out|get out]]
+VOne of the final chapters reads:\u000a\u000a"Some children are more readily listening to the words of our humble guide St. Nim. Keep an eye on these young ones, see how they close their eyes when they meditate on the stone, how their hands linger on the cool surface when their friends have turned away.\u000a\u000aBut remember how easy the humble apprentice grows proud. Those who come to impress you, to show you how much like our beloved saint they act, those are the ones who are most in need of his true blessings. \u000a\u000a[[True blessings?|look papers2]]\u000a\u000a
 p630
 sg23
 Vlook papers
@@ -2058,12 +2058,12 @@ sg25
 g26
 ((I2014
 I11
-I2
-I22
-I27
-I44
-I6
-I306
+I3
+I3
+I20
+I49
+I0
+I307
 I0
 tp632
 (dp633
@@ -2091,15 +2091,15 @@ g14
 I00
 sg15
 (lp642
-F1868.0
-aF344.0
+F1865.0
+aF326.0
 asg17
 (itiddlywiki
 Tiddler
 p643
 (dp644
 g21
-V\u000a\u000a(skip to the end)\u000a<<unity 'FinalDoor' slamDoor "">>\u000a\u000a[[Wait!|the end]]
+VWhat was that... [[Wait!|the end]]\u000a\u000a<<unity 'FinalDoor' slamDoor "">>\u000a\u000a
 p645
 sg23
 Vget out
@@ -2108,12 +2108,12 @@ sg25
 g26
 ((I2014
 I11
-I2
-I23
-I54
-I56
-I6
-I306
+I3
+I3
+I31
+I43
+I0
+I307
 I0
 tp647
 (dp648
@@ -2149,7 +2149,7 @@ Tiddler
 p658
 (dp659
 g21
-VThe end.
+V<center>\u000a!The end.\u000a\u000a!!Thanks for playing\u000a</center>\u000a
 p660
 sg23
 Vthe end
@@ -2158,12 +2158,12 @@ sg25
 g26
 ((I2014
 I11
+I3
 I2
-I22
-I28
-I18
-I6
-I306
+I27
+I37
+I0
+I307
 I0
 tp662
 (dp663
@@ -2225,10 +2225,460 @@ S'Twine.image'
 p682
 asg33
 g680
+sbsa(dp683
+g14
+I00
+sg15
+(lp684
+F222.0
+aF157.0
+asg17
+(itiddlywiki
+Tiddler
+p685
+(dp686
+g21
+VThere used to be talk radio on at night when I was a kid. The crazies usually call in, but it might lighten my mood.\u000a\u000aI wonder if that thing is still going.\u000a\u000a[[Try channel one|First]]\u000a[[Or the local station|Second]]\u000a[[Just enjoy the silence for now|Off]]
+p687
+sg23
+Vradio
+p688
+sg25
+g26
+((I2014
+I11
+I3
+I1
+I12
+I36
+I0
+I307
+I0
+tp689
+(dp690
+tp691
+Rp692
+sg31
+(lp693
+sg33
+g26
+((I2014
+I11
+I3
+I1
+I3
+I32
+I0
+I307
+I0
+tp694
+(dp695
+tp696
+Rp697
+sbsa(dp698
+g14
+I00
+sg15
+(lp699
+F216.0
+aF580.0
+asg17
+(itiddlywiki
+Tiddler
+p700
+(dp701
+g21
+V"All you parents listening out there need to listen, and listen good! The man in town may have taken our Lord out of our schools, but they cannot take him out of our hearts! Now more than ever is the time to teach your children about our good St. Nim."\u000a\u000a"Tell them the parable of the cripple and the stone. Tell them of the tribulations of Nim. Tell them how our good saint would rather shut his eyes forever, how he would rather bind shut his mouth, rather tear off his ears than let a single, tempting sensation ever again reach his fickle senses."\u000a\u000aOkay....\u000a\u000a[[Keep listening|second3]]\u000a\u000a[[Try channel One|First]]\u000a[[Turn it off|Off]]
+p702
+sg23
+Vsecond2
+p703
+sg25
+g26
+((I2014
+I11
+I3
+I1
+I28
+I39
+I0
+I307
+I0
+tp704
+(dp705
+tp706
+Rp707
+sg31
+(lp708
+sg33
+g26
+((I2014
+I11
+I3
+I1
+I20
+I41
+I0
+I307
+I0
+tp709
+(dp710
+tp711
+Rp712
+sbsa(dp713
+g14
+I00
+sg15
+(lp714
+F192.0
+aF719.0
+asg17
+(itiddlywiki
+Tiddler
+p715
+(dp716
+g21
+V"And teach them how, after years of servitude, our good Lord blessed St. Nim! Fused his eyes, closed his mouth for all but breathing, his ears withered until his countenance was as smooth as a river rock!"\u000a\u000a"Thus our Lord blessed St. Nim. And we should all be so lucky to be guided out of temptation by Him."\u000a\u000a"So, take your children out next sunday. Come down to the church, show them the stone of Nim! Let them stare into the darkness to meditate on his solitude, let them touch the smooth marble and ponder the humble power and wisdom of his cold silence."\u000a\u000aEr... I think that's quite enough of that.\u000a\u000a[[Try channel One|First]]\u000a[[Turn it off|Off]]
+p717
+sg23
+Vsecond3
+p718
+sg25
+g26
+((I2014
+I11
+I3
+I1
+I52
+I22
+I0
+I307
+I0
+tp719
+(dp720
+tp721
+Rp722
+sg31
+(lp723
+sg33
+g26
+((I2014
+I11
+I3
+I1
+I28
+I43
+I0
+I307
+I0
+tp724
+(dp725
+tp726
+Rp727
+sbsa(dp728
+g14
+I00
+sg15
+(lp729
+F339.0
+aF877.0
+asg17
+(itiddlywiki
+Tiddler
+p730
+(dp731
+g21
+VI guess it's only to be expected that I'd get a bad dream. Took me much too long to find a job. And I'm taking a bit of a chance going back to my home town. I mean I may never leave now.\u000a\u000aBut it felt so real. The rows of stones. Tall and dark, just like the old slab down at the church, but darker, smoother. I swear I can still feel the cool marble against my hand...\u000a\u000aMy heart is already racing again. Just need to get it out of my mind. Tomorrow will be a much better day I'm sure. If I just get those papers fixed. [[It should be up on the corner any minute...|go to school]]
+p732
+sg23
+Vremember nightmare
+p733
+sg25
+g26
+((I2014
+I11
+I3
+I1
+I49
+I43
+I0
+I307
+I0
+tp734
+(dp735
+tp736
+Rp737
+sg31
+(lp738
+sg33
+g26
+((I2014
+I11
+I3
+I1
+I39
+I54
+I0
+I307
+I0
+tp739
+(dp740
+tp741
+Rp742
+sbsa(dp743
+g14
+I00
+sg15
+(lp744
+F701.0
+aF168.0
+asg17
+(itiddlywiki
+Tiddler
+p745
+(dp746
+g21
+VShe really was my best friend growing up. Couldn't keep us apart even though I think her parents thought I was a bad influence. Well... the accident did finally end our friendship I suppose.\u000a\u000aI never got to see her after, but my parents said she was hurt real bad. Her whole family moved away, said they needed to live in a town that could offer some better care for her.\u000a\u000a----\u000a\u000aCouldn't be her. But I should get to the library anyway, if I can find some old homework in the archive from this kid's parents I can put their first names on the papers as well. \u000a\u000a\u000a\u000a<<unity 'STORY' startMovement "">>
+p747
+sg23
+Vdocuments2
+p748
+sg25
+g26
+((I2014
+I11
+I3
+I3
+I35
+I42
+I0
+I307
+I0
+tp749
+(dp750
+tp751
+Rp752
+sg31
+(lp753
+sg33
+g26
+((I2014
+I11
+I3
+I2
+I6
+I2
+I0
+I307
+I0
+tp754
+(dp755
+tp756
+Rp757
+sbsa(dp758
+g14
+I00
+sg15
+(lp759
+F860.0
+aF448.0
+asg17
+(itiddlywiki
+Tiddler
+p760
+(dp761
+g21
+VOkay this is strange.\u000a\u000a"First application for advanced class 1C by Anne Baumann."\u000a\u000aIt's a few copies of completed tasks and a motivational letter with more than a few mentions of St. Nim. Nothing but praise and longing for his holy, crippled abstinence. I mean this was a religious school back then... but still.\u000a\u000a"Searching for God with eyes ever closed."\u000a"... clipping my sinful wings."\u000a"Mortal ears cannot hear the quiet call of the stone."\u000a\u000aCrazy, and nothing like Anne at all!\u000a\u000aPlus, there's no 'advanced class 1C' here. I dont think there ever was. The kids are assigned class rooms 1-5 A or B.  A down here and B upstairs. \u000a\u000a[[There must be something else.|essays3]]\u000a
+p762
+sg23
+Vessays2
+p763
+sg25
+g26
+((I2014
+I11
+I3
+I3
+I39
+I39
+I0
+I307
+I0
+tp764
+(dp765
+tp766
+Rp767
+sg31
+(lp768
+sg33
+g26
+((I2014
+I11
+I3
+I2
+I31
+I33
+I0
+I307
+I0
+tp769
+(dp770
+tp771
+Rp772
+sbsa(dp773
+g14
+I00
+sg15
+(lp774
+F722.0
+aF596.0
+asg17
+(itiddlywiki
+Tiddler
+p775
+(dp776
+g21
+VNo. There doesn't seem to be anything dated after that application. \u000a\u000aI have to keep looking. I mean... even if it isn't her, I need to be sure I put down the right parent name on the new student's papers.\u000a\u000a[[From the top...|nightmare]]\u000a
+p777
+sg23
+Vessays3
+p778
+sg25
+g26
+((I2014
+I11
+I3
+I3
+I40
+I0
+I0
+I307
+I0
+tp779
+(dp780
+tp781
+Rp782
+sg31
+(lp783
+sg33
+g26
+((I2014
+I11
+I3
+I2
+I36
+I10
+I0
+I307
+I0
+tp784
+(dp785
+tp786
+Rp787
+sbsa(dp788
+g14
+I00
+sg15
+(lp789
+F1319.0
+aF184.0
+asg17
+(itiddlywiki
+Tiddler
+p790
+(dp791
+g21
+V!!"1C"\u000a\u000a[[Open door|wake up]]\u000a
+p792
+sg23
+Vnightmare2
+p793
+sg25
+g26
+((I2014
+I11
+I3
+I2
+I49
+I58
+I0
+I307
+I0
+tp794
+(dp795
+tp796
+Rp797
+sg31
+(lp798
+sg33
+g26
+((I2014
+I11
+I3
+I2
+I48
+I58
+I0
+I307
+I0
+tp799
+(dp800
+tp801
+Rp802
+sbsa(dp803
+g14
+I00
+sg15
+(lp804
+F2032.0
+aF254.0
+asg17
+(itiddlywiki
+Tiddler
+p805
+(dp806
+g21
+V"Only the student whose fickle mind is as smooth and cold as our dear St. Nim are ready."\u000a\u000a"Once the mind is ready the body must follow. If their ears distract them with jokes and sweet music they must be cut."\u000a\u000a"A mouth filling with more than nourishment demands must be sown shut. Likewise the eyes that linger too long on the pleasing shapes and colors of creation."\u000a\u000a"Only when the wings of His little angels are properly clipped will they carry their prayers to His withered ears."\u000a\u000a----\u000a\u000aWhat the hell is this!? Did they really do this to the kids? \u000a\u000aToo many people in this town are involved with the church. If this gets out there's no telling where it would lead!\u000a\u000a[[I have to get out of here!|get out]]
+p807
+sg23
+Vlook papers2
+p808
+sg25
+g26
+((I2014
+I11
+I3
+I3
+I31
+I18
+I0
+I307
+I0
+tp809
+(dp810
+tp811
+Rp812
+sg31
+(lp813
+sg33
+g26
+((I2014
+I11
+I3
+I3
+I20
+I52
+I0
+I307
+I0
+tp814
+(dp815
+tp816
+Rp817
 sbsasS'scale'
-p683
+p818
 I1
 sS'snapping'
-p684
+p819
 I00
 ss.
