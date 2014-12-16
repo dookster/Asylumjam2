@@ -146,7 +146,7 @@ public class Player : MonoBehaviour {
 	}
 
 	private void onUse(){
-		if(currentTile != null){
+		if(currentTile != null && allowMovement){
 			if(Mathf.RoundToInt(transform.forward.z) > 0){
 				// north
 				storyHandler.handleUseEvent(currentTile.name, StoryHandler.EVENT_NORTH);

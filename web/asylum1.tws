@@ -497,7 +497,7 @@ Tiddler
 p162
 (dp163
 g21
-V<<unity 'STORY' stopMovement "">>\u000a\u000a"Hello? Anyone in there!?"\u000a\u000aPerhaps one of the kids locked themselves in. No... it's padlocked, someone must have locked them in.\u000a\u000a"Just take it easy. I'll get you out!"\u000a\u000aThey keep tapping... is that some sort of code? Can they even hear me?\u000a\u000a[[Check the padlock|padlock]]\u000a
+V<<unity 'STORY' stopMovement "">>\u000a\u000a"Hello? Anyone in there!?"\u000a\u000aPerhaps one of the kids locked themselves in. No... it's padlocked, someone must have locked them in.\u000a\u000a"Just take it easy. I'll get you out!"\u000a\u000aCan they even hear me?\u000a\u000aThey just keep tapping. Is that... some sort of code? \u000a\u000a[[Check the padlock|padlock]]\u000a
 p164
 sg23
 Vbasement door reality
@@ -506,12 +506,12 @@ sg25
 g26
 ((I2014
 I11
-I3
+I5
+I20
+I52
+I41
 I2
-I56
-I21
-I0
-I307
+I309
 I0
 tp166
 (dp167
@@ -1049,7 +1049,7 @@ Tiddler
 p328
 (dp329
 g21
-V\u000a<<if $searchString is "Baumann" or $searchString is "baumann">> \u000aBaumann, Baumann... here we go. \u000a\u000aNo way. This is definitely not a coincidence. There's a thick file full of years of essays and science reports, all signed 'Anne Baumann'!\u000a\u000aThis makes no sense. How could she have gone to this school for years without ever running in to me in town?\u000a\u000a[[Pick something at random|found essays]]\u000a<<else>>\u000aYou couldn't find anything interesting about <<print $searchString>>.\u000a\u000a[[Try something else|library index]]\u000a<<endif>>
+V\u000a<<if $searchString is "Baumann" or $searchString is "baumann">> \u000aBaumann, Baumann... here. \u000a\u000aHm. No way. This is definitely not a coincidence. There's a thick file full of years of essays and science reports, all signed 'Anne Baumann'!\u000a\u000aThis makes no sense. How could she have gone to this school for years without ever running in to me in town?\u000a\u000a[[Pick something else at random|found essays]]\u000a<<else>>\u000aYou couldn't find anything interesting about <<print $searchString>>.\u000a\u000a[[Try something else|library index]]\u000a<<endif>>
 p330
 sg23
 Venter name
@@ -1058,12 +1058,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I3
-I36
-I58
-I0
-I307
+I43
+I11
+I5
+I312
 I0
 tp332
 (dp333
@@ -1099,7 +1099,7 @@ Tiddler
 p343
 (dp344
 g21
-VHere we go. These are supposed to hold all sorts of old assignments. I guess they only store the good ones.\u000a\u000aIt's all neatly sorted by author, but what should I look for? <<textinput $searchString>> \u000a[[Search|enter name]]\u000a\u000a[[Leave the archives alone|leave index]]\u000a\u000a<<unity 'STORY' stopMovement "">>
+VHere we go. These are supposed to hold all sorts of old assignments. I would guess they've only stored the good ones.\u000a\u000aIt's all neatly sorted by author, but what should I look for? <<textinput $searchString>> \u000a[[Search|enter name]]\u000a\u000a[[Leave the archives alone|leave index]]\u000a\u000a<<unity 'STORY' stopMovement "">>
 p345
 sg23
 Vlibrary index
@@ -1108,12 +1108,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I2
-I23
-I48
-I0
-I307
+I41
+I54
+I5
+I312
 I0
 tp347
 (dp348
@@ -1149,7 +1149,7 @@ Tiddler
 p358
 (dp359
 g21
-V<<if $searchString2 is "Morse" or $searchString is "Morse code" or $searchString is "morse code" or $searchString is "morse">> \u000aThere's another old diary essay. Some kid going on about how much he's learned as a boy scout. \u000aWhat's this? An old scout pamphlet about morse code!\u000a\u000a[[Read pamphlet|morse code]]\u000a<<else>>\u000aYou couldn't find anything about <<print $searchString2>>.\u000a[[Try something else|library index 2]]\u000a<<endif>>
+V<<if $searchString2 is "Morse" or $searchString2 is "Morse code" or $searchString2 is "morse code" or $searchString2 is "morse" or $searchString2 is "code">> \u000aThere's another old diary essay. Some kid going on about how much he's learned as a boy scout.\u000a\u000aAnd what's this? An old scout pamphlet about morse code!\u000a\u000a[[Read pamphlet|morse code]]\u000a<<else>>\u000aYou couldn't find anything about <<print $searchString2>>.\u000a[[Try something else|library index 2]]\u000a<<endif>>
 p360
 sg23
 Venter code search
@@ -1158,12 +1158,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I3
-I42
-I58
-I0
-I307
+I50
+I19
+I5
+I312
 I0
 tp362
 (dp363
@@ -1241,8 +1241,8 @@ g14
 I00
 sg15
 (lp387
-I1333
-aI15
+I1321
+aI17
 asg17
 (itiddlywiki
 Tiddler
@@ -1391,15 +1391,15 @@ g14
 I00
 sg15
 (lp432
-F1496.0
-aF363.0
+F1490.0
+aF385.0
 asg17
 (itiddlywiki
 Tiddler
 p433
 (dp434
 g21
-VDidn't know combination...\u000a<<unity 'STORY' startMovement "">>
+VI don't know the combination.\u000a\u000aPerhaps if I can figure out what that tapping is...\u000a\u000a<<unity 'STORY' startMovement "">>
 p435
 sg23
 Vleave lock
@@ -1408,12 +1408,12 @@ sg25
 g26
 ((I2014
 I11
-I1
-I18
-I32
-I6
+I8
+I3
+I49
+I22
 I5
-I305
+I312
 I0
 tp437
 (dp438
@@ -1499,7 +1499,7 @@ Tiddler
 p463
 (dp464
 g21
-VStrange. I was sure the local station was still going. Perhaps it's at a different freq...\u000a\u000a"PRAISE THE LORD!"\u000a\u000a  Ah... there we go. Must have given the locals some talking time late at night.\u000a\u000a"AND PRAISE HIS HUMBLE SERVANT OUR PROTECTOR AND GUIDE ST. NIM!"\u000a\u000a Nothing much has changed since I was a kid it seems. Nim this, Nim that. I don't know of any other towns adopting an unrecognized saint like this. The humble cripple St. Nim.\u000a\u000a[[Keep listening|second2]]\u000a\u000a[[Try channel One|First]]\u000a[[Turn it off|Off]]\u000a
+VNothing. \u000a\u000aStrange. I was sure the local station was still going. Perhaps it's at a different freq...\u000a\u000a"PRAISE THE LORD!"\u000a\u000a  Ah... there we go. Must have given the locals some talking time late at night.\u000a\u000a"AND PRAISE HIS HUMBLE SERVANT OUR PROTECTOR AND GUIDE ST. NIM!"\u000a\u000a Nothing much has changed since I was a kid it seems. Nim this, Nim that. I don't know of any other towns adopting an unrecognized saint like this. The humble cripple St. Nim.\u000a\u000a[[Keep listening|second2]]\u000a\u000a[[Try channel One|First]]\u000a[[Turn it off|Off]]\u000a
 p465
 sg23
 VSecond
@@ -1508,12 +1508,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I1
-I20
-I39
-I0
-I307
+I31
+I6
+I5
+I312
 I0
 tp467
 (dp468
@@ -1538,18 +1538,18 @@ tp474
 Rp475
 sbsa(dp476
 g14
-I01
+I00
 sg15
 (lp477
-F159.0
-aF870.0
+F154.0
+aF854.0
 asg17
 (itiddlywiki
 Tiddler
 p478
 (dp479
 g21
-VAh, silence is a bit better. As long as I don't fall asleep.\u000a\u000aI mean... not that crashing into a tree isn't bad enough, but I don't need any more [[nightmares|remember nightmare]] either.\u000a\u000a\u000a\u000a
+VAh, silence is a bit better. As long as I don't fall asleep.\u000a\u000aI mean... not that crashing into a tree isn't bad enough, but I really don't need any more [[nightmares|remember nightmare]].\u000a\u000a\u000a\u000a
 p480
 sg23
 VOff
@@ -1558,12 +1558,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I1
-I52
-I53
-I0
-I307
+I35
+I2
+I5
+I312
 I0
 tp482
 (dp483
@@ -1599,7 +1599,7 @@ Tiddler
 p493
 (dp494
 g21
-V"Alright I think I have Jim on the line. So do you have a question for our guest this evening?"\u000a\u000a"Yeah thanks, Linda. No questions from me but I have a thing or two that suit in your studio needs hear. I've lived in this town all my life and I have nothing but good things to say about our church. They've run that school for as long as it's been there. They built it for Christ's sake! ... pardon. Now I don't believe in all that hocus pocus, mind, but if listening to a few fairy tales means our kids stay out of trouble that's fine by me!"\u000a\u000a"Well that's one way to look at it I suppose. What do you think about that Mr. Williams?"\u000a\u000a"Well Linda..."\u000a\u000a----\u000a\u000aUgh. I can't stand listening to that guy...\u000a\u000aSwitch channel:\u000a[[Try that local one|Second]]\u000a[[Just turn it off|Off]]
+V"Alright I think I have Jim on the line. So do you have a question for our guest this evening?"\u000a\u000a"Yeah thanks, Linda. No questions from me but I have a thing or two that suit in your studio needs to hear. I've lived in this town all my life and I have nothing but good things to say about our church. They've run that school for as long as it's been there. They built it for Christ's sake! ... pardon. Now I don't believe in all that hocus pocus, mind, but if listening to a few fairy tales means our kids stay out of trouble that's fine by me!"\u000a\u000a"Well that's one way to look at it I suppose. What do you think about that Mr. Williams?"\u000a\u000a"Well Linda..."\u000a\u000a----\u000a\u000aUgh. I can't stand listening to that guy...\u000a\u000aSwitch channel:\u000a[[Try that local one|Second]]\u000a[[Just turn it off|Off]]
 p495
 sg23
 VFirst
@@ -1608,12 +1608,12 @@ sg25
 g26
 ((I2014
 I11
-I3
-I18
-I14
 I8
-I0
-I307
+I3
+I30
+I12
+I5
+I312
 I0
 tp497
 (dp498
@@ -2049,7 +2049,7 @@ Tiddler
 p628
 (dp629
 g21
-VOne of the final chapters reads:\u000a\u000a"Some children are more readily listening to the words of our humble guide St. Nim. Keep an eye on these young ones, see how they close their eyes when they meditate on the stone, how their hands linger on the cool surface when their friends have turned away.\u000a\u000aBut remember how easy the humble apprentice grows proud. Those who come to impress you, to show you how much like our beloved saint they act, those are the ones who are most in need of his true blessings. \u000a\u000a[[True blessings?|look papers2]]\u000a\u000a
+VOne of the final chapters reads:\u000a\u000a"Some children are more readily listening to the words of our humble guide St. Nim. Keep an eye on these young ones, see how they close their eyes when they meditate on the stone, how their hands linger on the cool surface when their friends have turned away.\u000a\u000aBut remember how easy the humble apprentice grows proud. Those who come to impress you, to show you how much like our beloved saint they act, those are the ones who are most in need of his true blessings."\u000a\u000a[[True blessings?|look papers2]]\u000a\u000a
 p630
 sg23
 Vlook papers
@@ -2058,12 +2058,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I3
-I20
-I49
-I0
-I307
+I52
+I30
+I5
+I312
 I0
 tp632
 (dp633
@@ -2280,7 +2280,7 @@ g14
 I00
 sg15
 (lp699
-F216.0
+F211.0
 aF580.0
 asg17
 (itiddlywiki
@@ -2288,7 +2288,7 @@ Tiddler
 p700
 (dp701
 g21
-V"All you parents listening out there need to listen, and listen good! The man in town may have taken our Lord out of our schools, but they cannot take him out of our hearts! Now more than ever is the time to teach your children about our good St. Nim."\u000a\u000a"Tell them the parable of the cripple and the stone. Tell them of the tribulations of Nim. Tell them how our good saint would rather shut his eyes forever, how he would rather bind shut his mouth, rather tear off his ears than let a single, tempting sensation ever again reach his fickle senses."\u000a\u000aOkay....\u000a\u000a[[Keep listening|second3]]\u000a\u000a[[Try channel One|First]]\u000a[[Turn it off|Off]]
+V"All you parents out there need to listen, and listen good! The man in town may have taken our Lord out of our schools, but he cannot take Him out of our hearts! Now more than ever is the time to teach your children about our good St. Nim."\u000a\u000a"Tell them the parable of the cripple and the stone. Tell them of the tribulations of Nim. Tell them how our good saint would rather shut his eyes forever, how he would rather bind shut his mouth, rather tear off his ears than let a single, tempting sensation ever again reach his fickle senses."\u000a\u000aOkay....\u000a\u000a[[Keep listening|second3]]\u000a\u000a[[Try channel One|First]]\u000a[[Turn it off|Off]]
 p702
 sg23
 Vsecond2
@@ -2297,12 +2297,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I1
-I28
-I39
-I0
-I307
+I32
+I23
+I5
+I312
 I0
 tp704
 (dp705
@@ -2330,7 +2330,7 @@ g14
 I00
 sg15
 (lp714
-F192.0
+F191.0
 aF719.0
 asg17
 (itiddlywiki
@@ -2338,7 +2338,7 @@ Tiddler
 p715
 (dp716
 g21
-V"And teach them how, after years of servitude, our good Lord blessed St. Nim! Fused his eyes, closed his mouth for all but breathing, his ears withered until his countenance was as smooth as a river rock!"\u000a\u000a"Thus our Lord blessed St. Nim. And we should all be so lucky to be guided out of temptation by Him."\u000a\u000a"So, take your children out next sunday. Come down to the church, show them the stone of Nim! Let them stare into the darkness to meditate on his solitude, let them touch the smooth marble and ponder the humble power and wisdom of his cold silence."\u000a\u000aEr... I think that's quite enough of that.\u000a\u000a[[Try channel One|First]]\u000a[[Turn it off|Off]]
+V"And teach them how, after years of servitude, our good Lord blessed St. Nim! Fused his eyes, closed his mouth for all but breathing, his ears and nose withered until his countenance was as smooth as a river rock!"\u000a\u000a"Thus our Lord blessed St. Nim. And we should all be so lucky to be guided out of temptation by Him."\u000a\u000a"So, take your children out next Sunday. Come down to the church, show them the stone of Nim! Let them stare into the darkness to meditate on his solitude, let them touch the smooth marble and ponder the humble power and wisdom of his cold silence."\u000a\u000aEr... I think that's quite enough of that.\u000a\u000a[[Try channel One|First]]\u000a[[Turn it off|Off]]
 p717
 sg23
 Vsecond3
@@ -2347,12 +2347,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I1
-I52
-I22
-I0
-I307
+I33
+I54
+I5
+I312
 I0
 tp719
 (dp720
@@ -2388,7 +2388,7 @@ Tiddler
 p730
 (dp731
 g21
-VI guess it's only to be expected that I'd get a bad dream. Took me much too long to find a job. And I'm taking a bit of a chance going back to my home town. I mean I may never leave now.\u000a\u000aBut it felt so real. The rows of stones. Tall and dark, just like the old slab down at the church, but darker, smoother. I swear I can still feel the cool marble against my hand...\u000a\u000aMy heart is already racing again. Just need to get it out of my mind. Tomorrow will be a much better day I'm sure. If I just get those papers fixed. [[It should be up on the corner any minute...|go to school]]
+VI guess it's only to be expected that I'd get bad dreams. Took me much too long to find a job. And I'm taking a bit of a chance going back to my home town. I mean, I may never leave now.\u000a\u000aBut it felt so real. The rows of stones. Tall and dark, just like the old slab down at the church, but darker, smoother. I swear I can still feel the cool marble against my hand...\u000a\u000aMy heart is already racing again. Just need to get it out of my mind. Tomorrow will be a much better day I'm sure. If I just get those papers fixed. \u000a\u000a[[The school should be up on the corner any minute...|go to school]]
 p732
 sg23
 Vremember nightmare
@@ -2397,12 +2397,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I1
-I49
-I43
-I0
-I307
+I36
+I6
+I5
+I312
 I0
 tp734
 (dp735
@@ -2488,7 +2488,7 @@ Tiddler
 p760
 (dp761
 g21
-VOkay this is strange.\u000a\u000a"First application for advanced class 1C by Anne Baumann."\u000a\u000aIt's a few copies of completed tasks and a motivational letter with more than a few mentions of St. Nim. Nothing but praise and longing for his holy, crippled abstinence. I mean this was a religious school back then... but still.\u000a\u000a"Searching for God with eyes ever closed."\u000a"... clipping my sinful wings."\u000a"Mortal ears cannot hear the quiet call of the stone."\u000a\u000aCrazy, and nothing like Anne at all!\u000a\u000aPlus, there's no 'advanced class 1C' here. I dont think there ever was. The kids are assigned class rooms 1-5 A or B.  A down here and B upstairs. \u000a\u000a[[There must be something else.|essays3]]\u000a
+VAnd it gets stranger.\u000a\u000a"First application for advanced class 1C by Anne Baumann."\u000a\u000aIt's a few copies of completed homwork assignments and a motivational letter with more than a few mentions of St. Nim. Nothing but praise and longing for his holy, crippled abstinence. I mean this was a religious school back then... but still.\u000a\u000a"Searching for God with eyes ever closed."\u000a"... clipping my sinful wings."\u000a"Mortal ears cannot hear the quiet call of the stone."\u000a\u000aCrazy, and nothing like Anne at all!\u000a\u000aPlus, there's no 'advanced class 1C' here. I dont think there ever was. The kids are assigned class rooms 1-6 A or B.  A down here and B upstairs. \u000a\u000a[[There must be something else.|essays3]]\u000a
 p762
 sg23
 Vessays2
@@ -2497,12 +2497,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I3
-I39
-I39
-I0
-I307
+I44
+I26
+I5
+I312
 I0
 tp764
 (dp765
@@ -2627,7 +2627,7 @@ tp801
 Rp802
 sbsa(dp803
 g14
-I00
+I01
 sg15
 (lp804
 F2032.0
@@ -2647,12 +2647,12 @@ sg25
 g26
 ((I2014
 I11
+I8
 I3
-I3
-I31
-I18
-I0
-I307
+I52
+I49
+I5
+I312
 I0
 tp809
 (dp810

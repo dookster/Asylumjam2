@@ -413,6 +413,7 @@ public class StoryHandler : MonoBehaviour {
 	public void showNightmareWorld(){
 		currentQuest = Q_NIGHTMARE_FIND_BASEMENT_DOOR;
 		audioSource.clip = nightmareAmbience;
+		audioSource.volume = 0.6f;
 		audioSource.Play();
 		monoliths.SetActive(true);
 		largeTables = GameObject.FindGameObjectsWithTag("largetable");
@@ -427,6 +428,7 @@ public class StoryHandler : MonoBehaviour {
 		currentQuest = Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY;
 		player.transform.position = new Vector3(-12.5f, 0f, -17.5f);
 		audioSource.clip = normalAmbience;
+		audioSource.volume = 0.25f;
 		audioSource.Play();
 		monoliths.SetActive(false);
 		foreach(GameObject table in largeTables){
