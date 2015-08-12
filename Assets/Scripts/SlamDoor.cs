@@ -18,9 +18,9 @@ public class SlamDoor : MonoBehaviour {
 	}
 
 	public void slamDoor(){
-		iTween.RotateAdd(gameObject, iTween.Hash("y", -110, "time", 0.3f, "easetype", "easeInQuad", "oncomplete", "black", "oncompletetarget", gameObject));
+		iTween.RotateAdd(gameObject, iTween.Hash("y", -110, "time", 0.75f, "easetype", "easeInQuad", "oncomplete", "black", "oncompletetarget", gameObject));
 		AudioSource audioSource =  GetComponent<AudioSource>() as AudioSource;
-		audioSource.PlayDelayed(0.1f);
+		audioSource.PlayDelayed(0.2f);
 	}
 
 	private void black(){

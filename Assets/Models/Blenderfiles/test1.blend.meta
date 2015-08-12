@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: da30ac678cd5e3142a832fdcb28b7875
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
     100002: Cube
@@ -25,6 +25,7 @@ ModelImporter:
     100038: wall3
     100040: table_big_001
     100042: wall_001
+    100044: frame_large_001
     400000: //RootNode
     400002: Cube
     400004: Cube_001
@@ -47,6 +48,7 @@ ModelImporter:
     400038: wall3
     400040: table_big_001
     400042: wall_001
+    400044: frame_large_001
     2300000: //RootNode
     2300002: Cube
     2300004: Cube_001
@@ -69,6 +71,7 @@ ModelImporter:
     2300038: wall3
     2300040: table_big_001
     2300042: wall_001
+    2300044: frame_large_001
     3300000: //RootNode
     3300002: Cube
     3300004: Cube_001
@@ -91,6 +94,7 @@ ModelImporter:
     3300038: wall3
     3300040: table_big_001
     3300042: wall_001
+    3300044: frame_large_001
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_006
@@ -112,6 +116,7 @@ ModelImporter:
     4300036: wall
     4300038: table_big_001
     4300040: wall_001
+    4300042: frame_large_001
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -123,6 +128,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
@@ -141,11 +150,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -168,3 +179,5 @@ ModelImporter:
   animationType: 2
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

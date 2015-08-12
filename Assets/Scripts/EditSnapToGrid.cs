@@ -25,7 +25,7 @@ public class EditSnapToGrid : MonoBehaviour {
 		y = depth;  // height
 		z = Mathf.Round(transform.position.z * snapInverse)/snapInverse; 
 
-		transform.position = new Vector3(x, y, z);
+		transform.position = new Vector3(Mathf.Round(x*100.0f)/100.0f, y, Mathf.Round(z * 100.0f) / 100.0f);
 	}
 
 

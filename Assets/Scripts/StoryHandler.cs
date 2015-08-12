@@ -34,6 +34,8 @@ public class StoryHandler : MonoBehaviour {
 	public AudioClip normalAmbience;
 	public AudioClip nightmareAmbience;
 
+	public TwineThing twineThing;
+
 	private AudioSource audioSource;
 	private Player player;
 	private SoundHandler soundHandler;
@@ -449,10 +451,13 @@ public class StoryHandler : MonoBehaviour {
 //	}
 
 	private void twineDisplay(string passageName){
-		Application.ExternalCall("TwineDisplay", passageName);
+		//Application.ExternalCall("TwineDisplay", passageName);
+
+		twineThing.GoToPassage(passageName);
 	}
 
 	public void stopMovement(){
+		Debug.Log ("Indeed, stop movement");
 		player.allowMovement = false;
 	}
 	
@@ -465,6 +470,6 @@ public class StoryHandler : MonoBehaviour {
 	/////////////////////////
 
 	void OnGUI() {
-		//GUI.Label(new Rect(10, 10, 300, 300), "Current quest: " + currentQuest);		
+		GUI.Label(new Rect(10, 10, 300, 300), "Current quest: " + currentQuest);		
 	}
 }

@@ -47,13 +47,13 @@ public class Player : MonoBehaviour {
 			Ray clickRay = mainCamera.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 			if(Physics.Raycast(clickRay, out hit, Mathf.Infinity) && Input.GetMouseButtonDown(0)){
-				if(hit.collider == forwardArrow.collider){
+				if(hit.collider == forwardArrow.GetComponent<Collider>()){
 					nextMove = FORWARD;
 				}
-				if(hit.collider == leftArrow.collider){
+				if(hit.collider == leftArrow.GetComponent<Collider>()){
 					nextMove = LEFT;
 				}
-				if(hit.collider == rightArrow.collider){
+				if(hit.collider == rightArrow.GetComponent<Collider>()){
 					nextMove = RIGHT;
 				}
 			}

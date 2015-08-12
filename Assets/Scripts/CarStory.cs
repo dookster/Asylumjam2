@@ -22,6 +22,7 @@ public class CarStory : MonoBehaviour {
 	}
 
 	public void enterSchool(){
+		Debug.Log("Enterschool");
 		Application.LoadLevel("scene1");
 	}
 }
