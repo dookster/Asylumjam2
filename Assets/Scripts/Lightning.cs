@@ -24,7 +24,7 @@ public class Lightning : MonoBehaviour {
 		{
 			lightningLight.intensity = 0;
 		}
-		localLight.intensity = lightningLight.intensity;
+		//localLight.intensity = lightningLight.intensity;
 	}
 
 	IEnumerator LightningFlash()

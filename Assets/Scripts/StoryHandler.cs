@@ -26,15 +26,21 @@ public class StoryHandler : MonoBehaviour {
 	public const int Q_FIND_RELIGIOUS_TEXTS			 		= 110;
 	public const int Q_LEAVE						 		= 120;
 
+	public Menu UiMenu;
+
 	public int currentQuest = -1;
 
 	public GameObject monoliths;
+	public GameObject MonolithDream;
+	public GameObject normalLevel;
 	public GameObject knocking;
 
 	public AudioClip normalAmbience;
 	public AudioClip nightmareAmbience;
 
 	public TwineThing twineThing;
+
+	public ScreenFade ScreenFader;
 
 	private AudioSource audioSource;
 	private Player player;
@@ -123,6 +129,7 @@ public class StoryHandler : MonoBehaviour {
 			case EVENT_NORTH:
 				if(currentQuest == Q_NIGHTMARE_FIND_BASEMENT_DOOR){
 					twineDisplay("basement door nightmare");
+					showMonolithWorld();
 				} else if (currentQuest == Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY) {
 					twineDisplay("basement door reality");
 				} else {
@@ -413,6 +420,13 @@ public class StoryHandler : MonoBehaviour {
 	private GameObject[] largeTables;
 
 	public void showNightmareWorld(){
+		twineThing.MainHyperText.gameObject.SetActive(false);
+		ScreenFader.FadeToBlack();
+		Invoke("showNightmareWorld2", ScreenFader.FadeTime);
+	}
+
+	private void showNightmareWorld2(){
+		twineThing.MainHyperText.gameObject.SetActive(true);
 		currentQuest = Q_NIGHTMARE_FIND_BASEMENT_DOOR;
 		audioSource.clip = nightmareAmbience;
 		audioSource.Play();
@@ -421,13 +435,27 @@ public class StoryHandler : MonoBehaviour {
 		foreach(GameObject table in largeTables){
 			table.SetActive(false);
 		}
-
+		
 		RenderSettings.fog = true;
+		ScreenFader.FadeToClear();
+	}
+
+	public void showMonolithWorld()
+	{
+		MonolithDream.SetActive(true);
+		normalLevel.SetActive(false);
 	}
 
 	public void hideNightmareWorld(){
+		twineThing.MainHyperText.gameObject.SetActive(false);
+		ScreenFader.FadeToBlack();
+		Invoke ("hideNightmareWorld2", ScreenFader.FadeTime);
+	}
+
+	private void hideNightmareWorld2(){
+		twineThing.MainHyperText.gameObject.SetActive(true);
 		currentQuest = Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY;
-		player.transform.position = new Vector3(-12.5f, 0f, -17.5f);
+		player.transform.position = new Vector3(-12.5f, 0f, -26f);
 		audioSource.clip = normalAmbience;
 		audioSource.Play();
 		monoliths.SetActive(false);
@@ -436,11 +464,15 @@ public class StoryHandler : MonoBehaviour {
 		}
 		RenderSettings.fog = false;
 		knocking.SetActive(true);
+
+		MonolithDream.SetActive(false);
+		normalLevel.SetActive(true);
+		ScreenFader.FadeToClear();
 	}
 
 
 	public void goToBasement(){
-		player.transform.position = new Vector3(2.5f, 0f, -10f);
+		player.transform.position = new Vector3(2.5f, 0f, -18.5f);
 		audioSource.Stop();
 		knocking.SetActive(false);
 	}
@@ -457,12 +489,14 @@ public class StoryHandler : MonoBehaviour {
 	}
 
 	public void stopMovement(){
-		Debug.Log ("Indeed, stop movement");
+		//Debug.Log ("Indeed, stop movement");
 		player.allowMovement = false;
+		UiMenu.HideButtons();
 	}
 	
 	public void startMovement(){
 		player.allowMovement = true;
+		UiMenu.ShowButtons();
 	}
 
 	/////////////////////////

@@ -34,7 +34,26 @@ public class Player : MonoBehaviour {
 		storyHandler = GameObject.FindGameObjectWithTag("storyhandler").GetComponent<StoryHandler>() as StoryHandler;
 		if(storyHandler == null) Debug.Log("ERROR: NO STORY HANDLER");
 	}
-	
+
+	public void MoveForward() {
+		if(allowMovement) {
+			nextMove = FORWARD;
+		}
+	}
+
+	public void MoveLeft() {
+		if(allowMovement) {
+			nextMove = LEFT;
+		}
+	}
+
+	public void MoveRight() {
+		if(allowMovement) {
+			nextMove = RIGHT;
+		}
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 //		if(allowMovement)
@@ -68,7 +87,7 @@ public class Player : MonoBehaviour {
 				nextMove = RIGHT;
 			}
 			if(Input.GetButtonUp("Use")){
-				onUse();
+				Use();
 			}
 		}
 
@@ -145,7 +164,7 @@ public class Player : MonoBehaviour {
 
 	}
 
-	private void onUse(){
+	public void Use(){
 		if(currentTile != null){
 			if(Mathf.RoundToInt(transform.forward.z) > 0){
 				// north

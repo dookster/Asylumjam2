@@ -13,8 +13,13 @@ public class TwineThing : MonoBehaviour {
 	public CarStory carStory;
 	public StoryHandler storyHandler;
 
+	public SlamDoor slamDoor;
+
 	public InputField inputField;
 	public Button inputDoneButton;
+	public Image twineImage;
+
+	public Sprite[] twineTextures;
 
 	/*
 	 *  Multi-body twine passages. Some words have two different variations. They are ordered on pairs between two (( and )) signs divided by |
@@ -231,6 +236,9 @@ public class TwineThing : MonoBehaviour {
 
 	IEnumerator SwitchToPassage(TweePassage passage, float time)
 	{
+		HideInputField();
+		HideTwineImage();
+
 		//Debug.Log ("SWITCH TO PASSAGE, " + passage.title);
 		blockInput = true;
 	
@@ -262,6 +270,8 @@ public class TwineThing : MonoBehaviour {
 	{
 		// TESTING
 		//variables["$searchString"] = "baumann";
+		HideInputField();
+		HideTwineImage();
 
 		string bodyText = string.Copy(passage.Body);
 
@@ -318,7 +328,18 @@ public class TwineThing : MonoBehaviour {
 		// Handle textinput requests
 		if(bodyText.Contains("<<textinput"))
 		{
-			ShowInputField("enter name", "$searchString");
+			int startBlockIndex = bodyText.IndexOf("<<textinput");
+			int endBlockIndex = bodyText.IndexOf(">>", startBlockIndex) + 2;
+
+			string inputBlock = bodyText.Substring(startBlockIndex, endBlockIndex - startBlockIndex);
+
+			string inputVar = inputBlock.Substring(0, inputBlock.Length-2).Split(' ')[1];
+
+			// We always assume the enter link for the input has the same name as the inputvar minus the $ sign
+
+			Debug.Log (bodyText);
+
+			ShowInputField(inputVar.Replace("$", ""), inputVar);
 		}
 
 		// Handle special unity calls
@@ -341,19 +362,35 @@ public class TwineThing : MonoBehaviour {
 			bodyText = bodyText.Replace(unityCall, "");
 		}
 
+		// Handle images
+		while(bodyText.Contains("[img"))
+		{
+			int startIndex = bodyText.IndexOf ("[img", System.StringComparison.OrdinalIgnoreCase);
+			int endIndex = bodyText.IndexOf("]]", startIndex, System.StringComparison.OrdinalIgnoreCase) + 2;
+
+			string imageBlock = bodyText.Substring(startIndex, endIndex - startIndex);
+
+			string imageName = imageBlock.Replace("[img","").Replace("[", "").Replace("]", "").Trim();
+
+			ShowTwineImage(imageName);
+
+			bodyText = bodyText.Replace(imageBlock, "");
+		}
+
 		return bodyText;
 	}
 
 	// resolves statements in the form:   $var is something or $var is somethingElse 
 	bool ResolveIfStatement(string statement)
 	{
-		string[] ors = statement.Split(new string[] {"or"}, System.StringSplitOptions.None);
+		string[] ors = statement.Split(new string[] {" or "}, System.StringSplitOptions.None);
 
 		foreach(string or in ors)
 		{
+			Debug.Log ("ors: " + or);
 			string[] words = or.Split(new string[]{"is"}, System.StringSplitOptions.None);
 
-			Debug.Log ("word: " + words[0] + " , " + words[1]);
+			//Debug.Log ("word: " + words[0] + " , " + words[1]);
 
 			if(variables.ContainsKey(words[0].Trim()) && variables[words[0].Trim()] == words[1].Trim(new char[]{' ', '\"'}))
 			{
@@ -363,16 +400,45 @@ public class TwineThing : MonoBehaviour {
 		return false;
 	}
 
+	void ShowTwineImage(string imageName)
+	{
+		Debug.Log ("Showing image");
+		if(twineImage == null) return;
+		foreach(Sprite s in twineTextures)
+		{
+			if(s.name == imageName)
+			{
+				twineImage.sprite = s;
+			}
+		}
+		twineImage.gameObject.SetActive(true);
+	}
+
+	void HideTwineImage()
+	{
+		Debug.Log ("Hiding image");
+		if(twineImage == null) return;
+		twineImage.gameObject.SetActive(false);
+	}
+
 	void ShowInputField(string passageOnDone, string variableToStore)
 	{
-		inputField.transform.parent.gameObject.SetActive(true);
-		inputDoneButton.onClick.AddListener(() => OnInputDoneClick(passageOnDone, variableToStore));
+		Debug.Log ("Showing input field: " + passageOnDone + " - " + variableToStore);
+		if(inputField != null)
+		{
+			inputField.transform.parent.gameObject.SetActive(true);
+			inputDoneButton.onClick.RemoveAllListeners();
+			inputDoneButton.onClick.AddListener(() => OnInputDoneClick(passageOnDone, variableToStore));
+		}
 	}
 
 	void HideInputField()
 	{
-		inputField.transform.parent.gameObject.SetActive(false);
-		inputField.text = "";
+		if(inputField != null)
+		{
+			inputField.transform.parent.gameObject.SetActive(false);
+			inputField.text = "";
+		}
 	}
 
 	void OnInputDoneClick(string passageOnDone, string variableToStore)
@@ -404,6 +470,12 @@ public class TwineThing : MonoBehaviour {
 		{
 			Type type = (typeof(StoryHandler));
 			type.GetMethod(method).Invoke((object)storyHandler, String.IsNullOrEmpty(param) ? null : new string[]{param});
+		}
+
+		if(target.Equals("FinalDoor", System.StringComparison.OrdinalIgnoreCase))
+		{
+			Type type = (typeof(SlamDoor));
+			type.GetMethod(method).Invoke((object)slamDoor, String.IsNullOrEmpty(param) ? null : new string[]{param});
 		}
 
 	}
