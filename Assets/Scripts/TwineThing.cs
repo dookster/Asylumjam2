@@ -51,7 +51,7 @@ public class TwineThing : MonoBehaviour {
 	public AudioClip woosh;
 	public AudioClip click;
 	
-	private TweePassage currentPassage;
+	//private TweePassage currentPassage;
 	
 	public bool gameStarted;
 	
@@ -98,7 +98,6 @@ public class TwineThing : MonoBehaviour {
 	public void StartGame()
 	{
 		TweePassage startPassage = passages["Start"];
-		currentPassage = startPassage;
 
 		StartCoroutine(SwitchToPassage(startPassage, 0.5f));
 
@@ -262,7 +261,6 @@ public class TwineThing : MonoBehaviour {
 
 		MainHyperText.CrossFadeAlpha(1, time, false);
 
-		currentPassage = passage;
 		blockInput = false;
 	}
 

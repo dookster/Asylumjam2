@@ -51,6 +51,8 @@
      <Compile Include="Assets\Scripts\FlexWall.cs" />
      <Compile Include="Assets\Scripts\GameSettings.cs" />
      <Compile Include="Assets\Scripts\LightFlicker.cs" />
+     <Compile Include="Assets\Scripts\LightmapSwitch\LightMapSwitcher.cs" />
+     <Compile Include="Assets\Scripts\LightmapSwitch\NaturalSortComparer.cs" />
      <Compile Include="Assets\Scripts\Lightning.cs" />
      <Compile Include="Assets\Scripts\Menu.cs" />
      <Compile Include="Assets\Scripts\NightSky.cs" />

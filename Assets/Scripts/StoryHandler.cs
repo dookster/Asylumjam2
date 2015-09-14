@@ -21,6 +21,7 @@ public class StoryHandler : MonoBehaviour {
 	public const int Q_FIND_PAPERS							= 10;
 	public const int Q_SEARCH_FOR_FAMILY_NAME				= 30; // read diary/essay
 	public const int Q_NIGHTMARE_FIND_BASEMENT_DOOR 		= 50;
+	public const int Q_NIGHTMARE_TURN_AROUND				= 60;
 	public const int Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY = 70;
 	public const int Q_ENTER_BASEMENT				 		= 100;
 	public const int Q_FIND_RELIGIOUS_TEXTS			 		= 110;
@@ -129,6 +130,7 @@ public class StoryHandler : MonoBehaviour {
 			case EVENT_NORTH:
 				if(currentQuest == Q_NIGHTMARE_FIND_BASEMENT_DOOR){
 					twineDisplay("basement door nightmare");
+					currentQuest = Q_NIGHTMARE_TURN_AROUND;
 					showMonolithWorld();
 				} else if (currentQuest == Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY) {
 					twineDisplay("basement door reality");
@@ -405,6 +407,26 @@ public class StoryHandler : MonoBehaviour {
 				break;
 			}
 		}
+
+		if(tileName == "NightmareReturn"){
+			switch(eventType){
+			case EVENT_ENTER:
+				if(currentQuest == Q_NIGHTMARE_TURN_AROUND){
+					twineDisplay("wake up");
+				}
+				break;
+			case EVENT_EXIT:
+				break;
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
 	}
 
 
@@ -472,7 +494,9 @@ public class StoryHandler : MonoBehaviour {
 
 
 	public void goToBasement(){
-		player.transform.position = new Vector3(2.5f, 0f, -18.5f);
+		//player.transform.position = new Vector3(2.5f, 0f, -18.5f);
+		player.transform.position = new Vector3(-10f, 0f, -66.1f);
+		player.transform.Rotate(Vector3.up, 90);
 		audioSource.Stop();
 		knocking.SetActive(false);
 	}
