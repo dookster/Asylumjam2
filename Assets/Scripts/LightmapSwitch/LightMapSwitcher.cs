@@ -1,59 +1,96 @@
 ﻿using UnityEngine;
-
 using System.Linq;
+using System.Collections.Generic;
 
 public class LightMapSwitcher : MonoBehaviour
 {
-	public Texture2D[] DayNear;
-	public Texture2D[] DayFar;
-	public Texture2D[] NightNear;
-	public Texture2D[] NightFar;
+	public Texture2D[] Normal;
+	public Texture2D[] Lightning;
+
+	public List<Texture2D> normalDirection;
+	public List<Texture2D> normalLight;
 	
-	private LightmapData[] dayLightMaps;
-	private LightmapData[] nightLightMaps;
+	public List<Texture2D> lightningDirection;
+	public List<Texture2D> lightningLight;
+
+	private LightmapData[] normalLightMaps;
+	private LightmapData[] lightningLightMaps;
 	
 	void Start ()
 	{
-		if ((DayNear.Length != DayFar.Length) || (NightNear.Length != NightFar.Length))
+
+		normalDirection = new List<Texture2D>();
+		normalLight = new List<Texture2D>();
+
+		lightningDirection = new List<Texture2D>();
+		lightningLight = new List<Texture2D>();
+
+		// Sort into light and direction maps.
+		foreach(Texture2D t2d in Normal)
 		{
-			Debug.Log("In order for LightMapSwitcher to work, the Near and Far LightMap lists must be of equal length");
-			return;
+			if(t2d.name.Contains("dir"))
+			{
+				normalDirection.Add(t2d);
+			}
+			if(t2d.name.Contains("light"))
+			{
+				normalLight.Add(t2d);
+			}
 		}
-		
+
+		foreach(Texture2D t2d in Lightning)
+		{
+			if(t2d.name.Contains("dir"))
+			{
+				lightningDirection.Add(t2d);
+			}
+			if(t2d.name.Contains("light"))
+			{
+				lightningLight.Add(t2d);
+			}
+		}
+
 		// Sort the Day and Night arrays in numerical order, so you can just blindly drag and drop them into the inspector
-		DayNear = DayNear.OrderBy(t2d => t2d.name, new NaturalSortComparer<string>()).ToArray();
-		DayFar = DayFar.OrderBy(t2d => t2d.name, new NaturalSortComparer<string>()).ToArray();
-		NightNear = NightNear.OrderBy(t2d => t2d.name, new NaturalSortComparer<string>()).ToArray();
-		NightFar = NightFar.OrderBy(t2d => t2d.name, new NaturalSortComparer<string>()).ToArray();
-		
+		normalDirection = (List<Texture2D>) normalDirection.OrderBy(t2d => t2d.name, new NaturalSortComparer<string>()).ToList();
+		normalLight = (List<Texture2D>) normalLight.OrderBy(t2d => t2d.name, new NaturalSortComparer<string>()).ToList();
+		lightningDirection = (List<Texture2D>) lightningDirection.OrderBy(t2d => t2d.name, new NaturalSortComparer<string>()).ToList();
+		lightningLight = (List<Texture2D>) lightningLight.OrderBy(t2d => t2d.name, new NaturalSortComparer<string>()).ToList();
+
+
 		// Put them in a LightMapData structure
-		dayLightMaps = new LightmapData[DayNear.Length];
-		for (int i=0; i<DayNear.Length; i++)
+
+		//
+		// NEAR = DIRECTIONAL
+		// FAR = LIGHT
+		//
+
+		normalLightMaps = new LightmapData[normalDirection.Count];
+		for (int i = 0 ; i < normalDirection.Count; i++)
 		{
-			dayLightMaps[i] = new LightmapData();
-			dayLightMaps[i].lightmapNear = DayNear[i];
-			dayLightMaps[i].lightmapFar = DayFar[i];
+			normalLightMaps[i] = new LightmapData();
+			normalLightMaps[i].lightmapNear = normalDirection[i];
+			normalLightMaps[i].lightmapFar = normalLight[i];
 		}
 		
-		nightLightMaps = new LightmapData[NightNear.Length];
-		for (int i=0; i<NightNear.Length; i++)
+		lightningLightMaps = new LightmapData[lightningDirection.Count];
+		for (int i = 0 ; i < lightningDirection.Count ; i++)
 		{
-			nightLightMaps[i] = new LightmapData();
-			nightLightMaps[i].lightmapNear = NightNear[i];
-			nightLightMaps[i].lightmapFar = NightFar[i];
+			lightningLightMaps[i] = new LightmapData();
+			lightningLightMaps[i].lightmapNear = lightningDirection[i];
+			lightningLightMaps[i].lightmapFar = lightningLight[i];
 		}
 	}
 	
 	#region Publics
 	public void SetToDay()
 	{
-		LightmapSettings.lightmaps = dayLightMaps;
+		LightmapSettings.lightmaps = normalLightMaps;
 		
 	}
 	
 	public void SetToNight()
 	{
-		LightmapSettings.lightmaps = nightLightMaps;
+		LightmapSettings.lightmaps = lightningLightMaps;
 	}
 	#endregion
 	

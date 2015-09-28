@@ -3,14 +3,14 @@ using System.Collections;
 
 public class LightFlicker : MonoBehaviour {
 
-	public Light light;
+	public Light lightObject;
 	public float maxInterval;
 
 	private float intensity;
 
 	// Use this for initialization
 	void Start () {
-		intensity = light.intensity;
+		intensity = lightObject.intensity;
 		FlickLight();
 	}
 	
@@ -21,11 +21,11 @@ public class LightFlicker : MonoBehaviour {
 
 	void FlickLight()
 	{
-		if(light.intensity == 0)
+		if(lightObject.intensity == 0)
 		{
-			light.intensity = intensity;
+			lightObject.intensity = intensity;
 		} else {
-			light.intensity = 0;
+			lightObject.intensity = 0;
 		}
 		Invoke ("FlickLight", Random.Range(0, maxInterval));
 	}
