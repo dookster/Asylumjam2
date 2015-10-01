@@ -27,6 +27,7 @@ ModelImporter:
     100042: wall_001
     100044: frame_large_001
     100046: frame_large_014
+    100048: blackboard_001
     400000: //RootNode
     400002: Cube
     400004: Cube_001
@@ -51,6 +52,7 @@ ModelImporter:
     400042: wall_001
     400044: frame_large_001
     400046: frame_large_014
+    400048: blackboard_001
     2300000: //RootNode
     2300002: Cube
     2300004: Cube_001
@@ -75,6 +77,7 @@ ModelImporter:
     2300042: wall_001
     2300044: frame_large_001
     2300046: frame_large_014
+    2300048: blackboard_001
     3300000: //RootNode
     3300002: Cube
     3300004: Cube_001
@@ -99,6 +102,7 @@ ModelImporter:
     3300042: wall_001
     3300044: frame_large_001
     3300046: frame_large_014
+    3300048: blackboard_001
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_006
@@ -122,6 +126,7 @@ ModelImporter:
     4300040: wall_001
     4300042: frame_large_001
     4300044: frame_large_014
+    4300046: blackboard_001
     7400000: Default Take
     9500000: //RootNode
   materials:
