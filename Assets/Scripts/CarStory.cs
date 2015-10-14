@@ -6,6 +6,8 @@ public class CarStory : MonoBehaviour {
 	public AudioSource ambience;
 	public AudioSource radio;
 
+	public ScreenFade ScreenFader;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -23,6 +25,8 @@ public class CarStory : MonoBehaviour {
 
 	public void enterSchool(){
 		Debug.Log("Enterschool");
-		Application.LoadLevel("scene1");
+		ScreenFader.FadeToBlack();
+		Application.LoadLevelAsync("scene1");
+		//Application.LoadLevel("scene1");
 	}
 }

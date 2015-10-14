@@ -28,6 +28,8 @@ ModelImporter:
     100044: frame_large_001
     100046: frame_large_014
     100048: blackboard_001
+    100050: Cylinder
+    100052: Cube_008
     400000: //RootNode
     400002: Cube
     400004: Cube_001
@@ -53,6 +55,8 @@ ModelImporter:
     400044: frame_large_001
     400046: frame_large_014
     400048: blackboard_001
+    400050: Cylinder
+    400052: Cube_008
     2300000: //RootNode
     2300002: Cube
     2300004: Cube_001
@@ -78,6 +82,8 @@ ModelImporter:
     2300044: frame_large_001
     2300046: frame_large_014
     2300048: blackboard_001
+    2300050: Cylinder
+    2300052: Cube_008
     3300000: //RootNode
     3300002: Cube
     3300004: Cube_001
@@ -103,6 +109,8 @@ ModelImporter:
     3300044: frame_large_001
     3300046: frame_large_014
     3300048: blackboard_001
+    3300050: Cylinder
+    3300052: Cube_008
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_006
@@ -127,6 +135,8 @@ ModelImporter:
     4300042: frame_large_001
     4300044: frame_large_014
     4300046: blackboard_001
+    4300048: Cylinder
+    4300050: Cube_008
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -172,7 +182,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []
@@ -186,7 +196,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -24,24 +24,34 @@ public class StoryHandler : MonoBehaviour {
 	public const int Q_NIGHTMARE_TURN_AROUND				= 60;
 	public const int Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY = 70;
 	public const int Q_ENTER_BASEMENT				 		= 100;
-	public const int Q_FIND_RELIGIOUS_TEXTS			 		= 110;
-	public const int Q_LEAVE						 		= 120;
+	public const int Q_SEARCH_STORAGE						= 110;
+	public const int Q_FIND_RELIGIOUS_TEXTS			 		= 120;
+//	public const int Q_LEAVE						 		= 130;
 
 	public Menu UiMenu;
 
 	public int currentQuest = -1;
 
+	public TwineThing twineThing;
+	
+	public ScreenFade ScreenFader;
+
+	[Header("Dynamic props")]
 	public GameObject monoliths;
 	public GameObject MonolithDream;
 	public GameObject normalLevel;
 	public GameObject knocking;
+	public GameObject topPoster;
+	public GameObject droppedPoster;
+	public GameObject padLock;
+	public GameObject basementDoorSign;
+	public GameObject subClassRoomDoor;
+	public TileBase subClassRoomEntranceTile;
 
+	[Header("Audio")]
 	public AudioClip normalAmbience;
 	public AudioClip nightmareAmbience;
 
-	public TwineThing twineThing;
-
-	public ScreenFade ScreenFader;
 
 	private AudioSource audioSource;
 	private Player player;
@@ -50,7 +60,7 @@ public class StoryHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Player>() as Player;
-		if(player == null) Debug.Log("ERROR: NO PLAYER");
+		if(player == null) Debug.LogError("ERROR: NO PLAYER");
 		audioSource = GetComponent<AudioSource>() as AudioSource;
 		soundHandler = GameObject.Find("SoundHandler").GetComponent<SoundHandler>() as SoundHandler;
 	}
@@ -88,12 +98,13 @@ public class StoryHandler : MonoBehaviour {
 			case EVENT_NORTH:
 				break;
 			case EVENT_SOUTH:
-				twineDisplay("found documents");
 				soundHandler.playPapers();
 				if(currentQuest == Q_FIND_PAPERS){
+					twineDisplay("found documents");
 					currentQuest = Q_SEARCH_FOR_FAMILY_NAME;
 				} else {
 					// repeat look at papers, reminding of name
+					twineDisplay("document reminder");
 				}
 				break;
 			case EVENT_EAST:
@@ -147,7 +158,6 @@ public class StoryHandler : MonoBehaviour {
 			}
 		}
 
-
 		if(tileName == "Stairs up"){
 			switch(direction){			
 			case EVENT_NORTH:
@@ -190,31 +200,61 @@ public class StoryHandler : MonoBehaviour {
 			}
 		}
 
-
-//		if(tileName == "Closet"){
-//			switch(direction){			
-//			case EVENT_NORTH:
-//				break;
-//			case EVENT_SOUTH:
-//				if(currentQuest == Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY){
-//					twineDisplay("closet");
-//				}
-//				break;
-//			case EVENT_EAST:
-//				break;
-//			case EVENT_WEST:			
-//				break;
-//			}
-//		}
-
-
-		if(tileName == "EndPapers"){
+		if(tileName == "TornPoster"){
 			switch(direction){			
 			case EVENT_NORTH:
 				break;
 			case EVENT_SOUTH:
-				twineDisplay("end papers");
-				soundHandler.playPapers();
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				if(topPoster.activeSelf)
+					twineDisplay("tear poster");
+				else
+					twineDisplay("tear down poster");
+				break;
+			}
+		}
+
+		if(tileName == "LibraryPoster"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				twineDisplay("library poster");
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "OfficePoster"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				twineDisplay("office poster");
+				break;
+			}
+		}
+
+		if(tileName == "TeachersDeskB"){
+			switch(direction){			
+			case EVENT_NORTH:
+				if(currentQuest == Q_NIGHTMARE_FIND_BASEMENT_DOOR){
+					twineDisplay("teachers desk nightmare");
+				} else {
+					twineDisplay("teachers desk b");
+				}
+				break;
+			case EVENT_SOUTH:
 				break;
 			case EVENT_EAST:
 				break;
@@ -223,6 +263,157 @@ public class StoryHandler : MonoBehaviour {
 			}
 		}
 
+		if(tileName == "TeachersDeskNorth"){
+			switch(direction){			
+			case EVENT_NORTH:
+				if(currentQuest == Q_NIGHTMARE_FIND_BASEMENT_DOOR){
+					twineDisplay("desk north");
+				}
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "TeachersDeskSouth"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				if(currentQuest == Q_NIGHTMARE_FIND_BASEMENT_DOOR){
+					twineDisplay("desk south");
+				}
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+//		if(tileName == "EndPapers"){
+//			switch(direction){			
+//			case EVENT_NORTH:
+//				break;
+//			case EVENT_SOUTH:
+//				twineDisplay("end papers");
+//				soundHandler.playPapers();
+//				break;
+//			case EVENT_EAST:
+//				break;
+//			case EVENT_WEST:
+//				break;
+//			}
+//		}
+
+
+		// Cellar
+
+		if(tileName == "BasementPosterA"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				twineDisplay("basement poster a");
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "BasementPosterB"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				twineDisplay("basement poster b");
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "BasementDesk"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				twineDisplay("end papers");
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "BasementBoxes"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				twineDisplay("basement boxes");
+				break;
+			}
+		}
+
+		if(tileName == "BasementClassDoor"){
+			switch(direction){			
+			case EVENT_NORTH:
+				if(currentQuest != Q_FIND_RELIGIOUS_TEXTS){
+					twineDisplay("basement class");
+				}
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "BasementStorageDoor"){
+			switch(direction){			
+			case EVENT_NORTH:
+				player.currentTile.openDoor();
+				player.currentTile.blockNorth = false;
+				twineDisplay("basement storage");
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
+
+		if(tileName == "BasementEndDoor"){
+			switch(direction){			
+			case EVENT_NORTH:
+				break;
+			case EVENT_SOUTH:
+				break;
+			case EVENT_EAST:
+				twineDisplay("basement end door");
+				break;
+			case EVENT_WEST:
+				break;
+			}
+		}
 
 		// Doors
 		if(tileName == "ClassDoor1"){
@@ -281,6 +472,9 @@ public class StoryHandler : MonoBehaviour {
 				player.currentTile.openDoor();
 				player.currentTile.blockSouth = false;
 				twineDisplay("office");
+				break;
+			case EVENT_NORTH:
+				twineDisplay("bulletin board");
 				break;
 			}
 		}
@@ -431,14 +625,6 @@ public class StoryHandler : MonoBehaviour {
 
 
 
-
-
-
-
-
-
-
-
 	private GameObject[] largeTables;
 
 	public void showNightmareWorld(){
@@ -448,6 +634,7 @@ public class StoryHandler : MonoBehaviour {
 	}
 
 	private void showNightmareWorld2(){
+		startMovement();
 		twineThing.MainHyperText.gameObject.SetActive(true);
 		currentQuest = Q_NIGHTMARE_FIND_BASEMENT_DOOR;
 		audioSource.clip = nightmareAmbience;
@@ -469,12 +656,16 @@ public class StoryHandler : MonoBehaviour {
 	}
 
 	public void hideNightmareWorld(){
+		padLock.SetActive(true);
+		basementDoorSign.SetActive(false);
 		twineThing.MainHyperText.gameObject.SetActive(false);
 		ScreenFader.FadeToBlack();
 		Invoke ("hideNightmareWorld2", ScreenFader.FadeTime);
 	}
 
 	private void hideNightmareWorld2(){
+		padLock.SetActive(false);
+		basementDoorSign.SetActive(true);
 		twineThing.MainHyperText.gameObject.SetActive(true);
 		currentQuest = Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY;
 		player.transform.position = new Vector3(-12.5f, 0f, -26f);
@@ -492,6 +683,11 @@ public class StoryHandler : MonoBehaviour {
 		ScreenFader.FadeToClear();
 	}
 
+	public void tearDownPoster(){
+		droppedPoster.SetActive(true);
+		topPoster.SetActive(false);
+	}
+
 
 	public void goToBasement(){
 		//player.transform.position = new Vector3(2.5f, 0f, -18.5f);
@@ -499,12 +695,18 @@ public class StoryHandler : MonoBehaviour {
 		player.transform.Rotate(Vector3.up, 90);
 		audioSource.Stop();
 		knocking.SetActive(false);
+
+		currentQuest = Q_SEARCH_STORAGE;
 	}
 
-
-//	private void pickUpKey(){
-//		currentQuest = Q_ENTER_BASEMENT;
-//	}
+	public void openSubClassroom(){
+		subClassRoomEntranceTile.openDoor();
+		// TODO play open door and walking sound, allow movement when done.
+	}
+	
+	public void endSequence(){
+		// TODO slam door, play sound, instant screen blackout and game over message.
+	}
 
 	private void twineDisplay(string passageName){
 		//Application.ExternalCall("TwineDisplay", passageName);
@@ -522,6 +724,7 @@ public class StoryHandler : MonoBehaviour {
 		player.allowMovement = true;
 		UiMenu.ShowButtons();
 	}
+
 
 	/////////////////////////
 	/// debug stuff

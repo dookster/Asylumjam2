@@ -52,6 +52,7 @@
      <None Include="Assets\Plugins\Candlelight\Asset Store Products\HyperText\Documentation\Changelog.txt" />
      <None Include="Assets\Plugins\Candlelight\Asset Store Products\HyperText\Examples\Keywords\emoji - grinning.txt" />
      <None Include="Assets\Twee\asylum1.txt" />
+     <None Include="Assets\BrightnessEffect.shader" />
      <None Include="Assets\Twee\asylum2.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

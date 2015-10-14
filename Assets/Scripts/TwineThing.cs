@@ -336,7 +336,7 @@ public class TwineThing : MonoBehaviour {
 			// We always assume the enter link for the input has the same name as the inputvar minus the $ sign
 
 			Debug.Log (bodyText);
-
+			bodyText = bodyText.Replace(inputBlock, "");
 			ShowInputField(inputVar.Replace("$", ""), inputVar);
 		}
 
@@ -414,7 +414,6 @@ public class TwineThing : MonoBehaviour {
 
 	void HideTwineImage()
 	{
-		Debug.Log ("Hiding image");
 		if(twineImage == null) return;
 		twineImage.gameObject.SetActive(false);
 	}

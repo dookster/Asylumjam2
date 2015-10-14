@@ -11,6 +11,7 @@ public class Menu : MonoBehaviour {
 	public GameObject MainPanel;
 	public GameObject SettingsPanel;
 
+	public Slider BrightnessSlider;
 	public Slider AlphaSlider;
 	public Slider SizeSlider;
 
@@ -18,11 +19,15 @@ public class Menu : MonoBehaviour {
 	public CanvasGroup buttonGroup;
 	public Button[] buttons;
 
+	[Header("Settings")]
+	public Brightness brightness;
+
 	void Start()
 	{
+		BrightnessSlider.value = GameSettings.LoadBrightness();
 		AlphaSlider.value = GameSettings.LoadButtonAlpha();
 		SizeSlider.value = GameSettings.LoadButtonSize();
-		
+
 
 		SetButtonAlpha(AlphaSlider.value);
 		SetButtonSize(SizeSlider.value);
@@ -87,6 +92,12 @@ public class Menu : MonoBehaviour {
 		{
 			HideButtons();
 		}
+	}
+
+	public void SetBrightness(float value)
+	{
+		brightness.brightness = value;
+		GameSettings.SaveBrightness(value);
 	}
 
 	public void SetButtonSize(float value)
