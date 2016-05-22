@@ -10,7 +10,7 @@ public class Brightness : MonoBehaviour {
 	public Shader shaderDerp;
 	Material m_Material;
 	
-	[Range(0.5f, 2f)]
+	[Range(0.5f, 5f)]
 	public float brightness = 1f;
 	
 	void Start() {

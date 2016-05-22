@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 
@@ -12,7 +12,9 @@ public class TileBase : MonoBehaviour {
 	public bool fireOnce;
 
 	public GameObject[] doors; // any doors connected to the tile, all will be opened (should be just 1 or 2)
-							   // Add the door HINGE to this
+                               // Add the door HINGE to this
+
+    public GameObject[] doorLights; 
 
 	private SoundHandler soundHandler;
 
@@ -57,8 +59,9 @@ public class TileBase : MonoBehaviour {
 	}
 
 	public void openDoor(){
-		foreach(GameObject go in doors){
-			if(iTween.Count(go) < 1){
+		for(int n = 0; n < doors.Length; n++){
+            GameObject go = doors[n];
+            if (iTween.Count(go) < 1){
 				if(Mathf.Round(go.transform.localRotation.eulerAngles.y) == 0){
 					iTween.RotateAdd(go, iTween.Hash("y", 130, "time", 2));
 					soundHandler.playOpenDoor();
@@ -67,13 +70,17 @@ public class TileBase : MonoBehaviour {
 					iTween.RotateAdd(go, iTween.Hash("y", -130, "time", 2));
 					soundHandler.playOpenDoor();
 				}
+
+                doorLights[n].SetActive(true);
+
 			}
 		}
 	}
 
 	public void closeDoor(){
-		foreach(GameObject go in doors){
-			if(Mathf.Round(go.transform.localRotation.eulerAngles.y) == 130){
+        for (int n = 0; n < doors.Length; n++){
+            GameObject go = doors[n];
+            if (Mathf.Round(go.transform.localRotation.eulerAngles.y) == 130){
 				iTween.RotateAdd(go, iTween.Hash("y", -130, "time", 2));
 				soundHandler.playOpenDoor();
 			}
@@ -81,7 +88,8 @@ public class TileBase : MonoBehaviour {
 				iTween.RotateAdd(go, iTween.Hash("y", 130, "time", 2));
 				soundHandler.playOpenDoor();
 			}
-		}
+            doorLights[n].SetActive(false);
+        }
 	}
 	
 	public void onLookingNorth(){
@@ -111,5 +119,6 @@ public class TileBase : MonoBehaviour {
 	public void onUse(){
 
 	}
+
 
 }

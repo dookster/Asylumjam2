@@ -47,6 +47,7 @@ public class StoryHandler : MonoBehaviour {
 	public GameObject basementDoorSign;
 	public GameObject subClassRoomDoor;
 	public TileBase subClassRoomEntranceTile;
+	public Lightning lightning;
 
 	[Header("Audio")]
 	public AudioClip normalAmbience;
@@ -145,7 +146,7 @@ public class StoryHandler : MonoBehaviour {
 					showMonolithWorld();
 				} else if (currentQuest == Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY) {
 					twineDisplay("basement door reality");
-				} else {
+				} else if (currentQuest != Q_NIGHTMARE_TURN_AROUND) {
 					twineDisplay("basement door");
 				}
 				break;
@@ -634,6 +635,10 @@ public class StoryHandler : MonoBehaviour {
 	}
 
 	private void showNightmareWorld2(){
+//		lightning.LightSwitcher.SetToDay();
+//		lightning.gameObject.SetActive(false);
+		padLock.SetActive(false);
+		basementDoorSign.SetActive(true);
 		startMovement();
 		twineThing.MainHyperText.gameObject.SetActive(true);
 		currentQuest = Q_NIGHTMARE_FIND_BASEMENT_DOOR;
@@ -656,16 +661,15 @@ public class StoryHandler : MonoBehaviour {
 	}
 
 	public void hideNightmareWorld(){
-		padLock.SetActive(true);
-		basementDoorSign.SetActive(false);
 		twineThing.MainHyperText.gameObject.SetActive(false);
 		ScreenFader.FadeToBlack();
 		Invoke ("hideNightmareWorld2", ScreenFader.FadeTime);
 	}
 
 	private void hideNightmareWorld2(){
-		padLock.SetActive(false);
-		basementDoorSign.SetActive(true);
+		padLock.SetActive(true);
+//		lightning.gameObject.SetActive(true);
+		basementDoorSign.SetActive(false);
 		twineThing.MainHyperText.gameObject.SetActive(true);
 		currentQuest = Q_SEARCH_LIBRARY_FOR_CLUE_AND_FIND_KEY;
 		player.transform.position = new Vector3(-12.5f, 0f, -26f);
@@ -691,6 +695,8 @@ public class StoryHandler : MonoBehaviour {
 
 	public void goToBasement(){
 		//player.transform.position = new Vector3(2.5f, 0f, -18.5f);
+//		lightning.LightSwitcher.SetToDay();
+//		lightning.gameObject.SetActive(false);
 		player.transform.position = new Vector3(-10f, 0f, -66.1f);
 		player.transform.Rotate(Vector3.up, 90);
 		audioSource.Stop();
@@ -701,6 +707,7 @@ public class StoryHandler : MonoBehaviour {
 
 	public void openSubClassroom(){
 		subClassRoomEntranceTile.openDoor();
+		subClassRoomEntranceTile.blockNorth = false;
 		// TODO play open door and walking sound, allow movement when done.
 	}
 	

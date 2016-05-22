@@ -10,10 +10,16 @@ public class Lightning : MonoBehaviour {
 
 	private float originalLightIntensity;
 
+	private Coroutine lightningTask;
+
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 		//originalLightIntensity = lightningLight.intensity;
-		StartCoroutine(LightningFlash());
+		lightningTask = StartCoroutine(LightningFlash());
+	}
+
+	void OnDisable() {
+		StopCoroutine("LightningFlash");
 	}
 	
 	// Update is called once per frame

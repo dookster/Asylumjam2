@@ -66,11 +66,11 @@ That [[sign|nightmare2]] wasn't on the door before.
 :: basement door reality
 <<unity 'STORY' stopMovement "">>
 
-"Hello? Anyone in there!?"
+<q>Hello? Anyone in there!?</q>
 
 Perhaps one of the kids locked themselves in. No... it's padlocked, someone must have locked them in.
 
-"Just take it easy. I'll get you out!"
+<q>Just take it easy. I'll get you out!</q>
 
 They keep tapping... is that some sort of code? Can they even hear me?
 
@@ -136,14 +136,6 @@ This is the school library.
 
 
 
-:: documents2
-That's a bit of a coincidence. Not many German descendants around here. Could he be related to Anne? I mean the age is right for a young son I suppose. But she'd had to have given him her name. No, it says both his parents are former students here. 
-
-Anne was my best friend in school, and I we didn't go to this one. 
-
-[[And why on earth would she return to this town with her family?|documents3]]
-
-
 :: searchString
 
 <<if $searchString is "Baumann" or $searchString is "baumann">> 
@@ -151,13 +143,15 @@ Baumann, Baumann... here we go.
 
 No way. This is definitely not a coincidence. There's a thick file full of years of essays and science reports, all signed 'Anne Baumann'!
 
-This makes no sense. How could she have gone to this school for years without ever running in to me in town?
+This makes no sense. How could she have gone to this school for years without ever running in to me in town? Does she still live here?
 
-[[Pick something at random|found essays]]
+
+[[Pick something at random.|found essays]]
 <<else>>
 You couldn't find anything interesting about <<print $searchString>>.
 
-[[Try something else|library index]]
+
+[[Try something else.|library index]]
 <<endif>>
 
 
@@ -186,9 +180,9 @@ You couldn't find anything about <<print $searchString2>>.
 
 
 :: padlock
-Old and rusty, clearly this doesn't see much use.
+It's old and rusty, clearly it doesn't see much use.
 
-That's weird. All the numbers are worn off and someone has edged letters into the knob instead. They've fitted half the alphabet on there.
+Huh. All the numbers are long worn off, but someone has edged letters into the knob instead. They've fitted half the alphabet on there.
 
 I guess I could give it a shot...
 
@@ -241,10 +235,6 @@ Strange. I was sure the local station was still going. Perhaps it's at a differe
 
 Oh... there we go. Must have given the locals some talking time late at night.
 
-<q> AND PRAISE HIS HUMBLE SERVANT OUR PROTECTOR AND GUIDE ST. NIM!</q>
-
-Not much has changed since I was a kid it seems. Nim this, Nim that. All towns in this end of the country have patron saints. But I don't know of any others adopting an unrecognized one like this. The humble cripple St. Nim.
-
 [[Keep listening|second2]]
 
 [[Try channel One|First]]
@@ -261,29 +251,38 @@ The cafeteria is through here. Nothing I need there, and I don't think my key wo
 This is the door to the basement. I've never been down there, but I'm sure there's nothing I need.
 
 
-:: documents3
-She really was my best friend growing up. Couldn't keep us apart even though I think her parents thought I was a bad influence. Well... the accident did finally end our friendship I suppose.
+:: documents2
+That's a bit of a coincidence. Not many German descendants around here. Could he be related to Anne? I mean the age is right for a young son I suppose. But she'd had to have given him her name. No, it says both his parents are former students here. 
 
-I never got to see her after, but my parents said she was hurt real bad. Her whole family moved away, said they needed to live in a town that could offer some better care for her.
+Anne was my best friend when I was a kid, but we didn't go to this school. 
 
 
-[[It can't be her.|documents4]]
+[[And why on earth would she return to this town with her family?|documents3]]
 
 
 :: found essays
-There's a number of short assignments written in the style of a diary. It doesn't make sense. She seems to have started here just after the accident, but she doesn't mention it with a single word.
+There's a number of short assignments, all written in the style of a diary. It doesn't make sense. With these dates she must have started here just after the accident, but she doesn't mention it with a single word.
 
 Or me for that matter.
 
-[[Look for more|essays2]]
 
-
+[[Look for more.|essays2]]
 
 
 :: morse code
 [img[morse]]
 
 <<unity 'STORY' startMovement "">>
+
+
+:: sub classroom
+Another class room!
+
+It's filthy. Everything covered in dust, but there's tracks too. Someone was just here. 
+
+
+No... it's completely empty. And why are there no chairs for the children?
+
 
 
 :: look papers2
@@ -324,11 +323,9 @@ Some sort of debate show, I think.
 
 
 :: second2
-<q> All you parents listening out there need to listen, and listen good! The man in town may have taken our Lord out of our schools, but they cannot take him out of our hearts! Now more than ever is the time to teach your children about our good St. Nim.</q>
+<q> AND PRAISE HIS HUMBLE SERVANT OUR PROTECTOR AND GUIDE ST. NIM!</q>
 
-<q> Tell them the parable of the cripple and the stone. Tell them of the tribulations of Nim. Tell them how our good saint would rather shut his eyes forever, how he would rather bind shut his mouth, rather tear off his ears than let a single, tempting sensation ever again reach his fickle senses.</q>
-
-Oh-kay....
+Not much has changed since I was a kid it seems. Nim this, Nim that. All towns in this end of the country have patron saints. But I don't know of any others adopting an unrecognized one like this. The humble cripple St. Nim.
 
 [[Keep listening|second3]]
 
@@ -347,29 +344,23 @@ No reason to go in there.
 Just a student bathroom. I don't need to go right now.
 
 
-:: documents4
-But I should get to the library anyway, if I can find some old homework in the archive from this kid's parents I can put their first names on the papers as well. 
+:: documents3
+They couldn't keep us apart even though I think her parents thought I was a bad influence. Well... the accident did finally end our friendship I suppose.
 
-<<unity 'STORY' startMovement "">>
+I never got to see her after, but my parents said she was hurt real bad. Her whole family moved away, said they needed to live in a town that could offer some better care for her.
+
+
+[[It can't be her.|documents4]]
 
 
 :: essays2
-Okay this is strange.
+This one sticks out.
 
-"First application for advanced class 1C by Anne Baumann."
+<q>"First application for advanced class 1C by Anne Baumann."</q>
 
-It's a few copies of completed tasks and a motivational letter with more than a few mentions of St. Nim. Nothing but praise and longing for his holy, crippled abstinence. I mean this was a religious school back then... but still.
+It's a few copies of completed tasks and a motivational letter with more than a few mentions of St. Nim. Nothing but praise and longing for his holy, crippled abstinence. I mean this was a religious school back then.
 
-"Searching for God with eyes ever closed."
-"... clipping my sinful wings."
-"Mortal ears cannot hear the quiet call of the stone."
-
-Crazy, and nothing like Anne at all!
-
-Plus, there's no 'advanced class 1C' here. I dont think there ever was. The kids are assigned class rooms 1-5 A or B.  A down here and B upstairs. 
-
-[[There must be something else.|essays3]]
-
+[[But still...|essays3]]
 
 
 :: morse [Twine.image]
@@ -385,14 +376,14 @@ Not doing that again.
 
 
 :: leave lock
-Didn't know combination...
+I can't figure out the combination.
 <<unity 'STORY' startMovement "">>
 
 
 :: get out
 What was that... [[Wait!|the end]]
 
-<<unity 'FinalDoor' slamDoor "">>
+<<unity 'STORY' endSequence "">>
 
 
 
@@ -420,9 +411,9 @@ Silence is a little bit better. As long as I don't fall asleep at the wheel. I f
 
 
 :: First2
-<q>- Yeah thanks, Linda. No questions from me, but I have a thing or two that suit in your studio needs to hear. I've lived in this town all my life and I have nothing but good things to say about our church. They've always been in charge of our school. They built it for Christ's sake! ... pardon. Now I don't believe in all that hocus pocus, mind, but if listening to a few fairy tales means our kids stay out of trouble that's fine by me!</q>
+<q>- Yeah thanks, Linda. No questions from me, but I have a thing or two that suit in your studio needs to hear. I've lived in this town all my life and I have nothing but good things to say about our church. They've been running the school for generations. Now I don't believe in all that hocus pocus, mind, but if listening to a few fairy tales means our kids stay out of trouble that's fine by me!</q>
 
-<q>- Well that's one way to look at it I suppose. What do you think about that Mr. Williams?</q>
+<q>- Alright, that's one way to look at it I suppose. What do you think about that Mr. Williams?</q>
 
 <q>- Well Linda...</q>
 
@@ -434,13 +425,13 @@ Ugh. I can't stand listening to that guy.
 
 
 :: second3
-<q> And teach them how, after years of servitude, our good Lord blessed St. Nim! Fused his eyes, closed his mouth for all but breathing, his ears withered until his countenance was as smooth as a river rock!</q>
+<q> All you parents out there need to listen, and listen good! The man in town may have taken the Lord out of our schools, but they can't take him out of our hearts! Now more than ever is the time to teach your children about our good St. Nim.</q>
 
-<q>Thus our Lord blessed St. Nim. And we should all be so lucky to be guided out of temptation by Him.</q>
+<q> Tell them the parable of the cripple and the stone. Tell them of the tribulations of Nim. Tell them how our good saint would rather shut his eyes forever, how he would rather bind shut his mouth, rather tear off his ears than let tempting sensations ever again reach his fickle senses.</q>
 
-<q>So, take your children out next sunday. Come down to the church, show them the stone of Nim! Let them stare into the darkness to meditate on his solitude, let them touch the smooth marble and ponder the humble power and wisdom of his cold silence.</q>
+Oh-kay....
 
-I think that's quite enough of that.
+[[Keep listening|second4]]
 
 [[Try channel One|First]]
 
@@ -451,37 +442,41 @@ I think that's quite enough of that.
 The stairs to second floor are through there. Nothing up there but more class rooms. 
 
 
-:: document reminder
-(something about the papers and the name Anne Baumann)
+:: documents4
+But I should get to the library anyway, if I can find some old homework in the archive from this kid's parents I can put their first names on the papers as well. 
+
+<<unity 'STORY' startMovement "">>
 
 
 :: essays3
-No. There doesn't seem to be anything dated after that application. 
+<q>"Searching for God with eyes ever closed."
+"... clipping my sinful wings."
+"Mortal ears cannot hear the quiet call of the stone."</q>
 
-I have to keep looking. I mean... even if it isn't her, I need to be sure I put down the right parent name on the new student's papers.
+Crazy, it doesn't sound like her at all!
 
-[[From the top...|nightmare]]
+Also, there's no 'advanced class 1C' here. I don't think there ever was. The kids are assigned class rooms 1-5 A or B.  A down here and B upstairs. 
+
+
+[[There must be something else.|essays4]]
 
 
 
 :: wake up
-Gah!
+Ah!
 
 Dream. It was just another stupid nightmare. Gotta pull myself together.
 
-Such a weird sound... or whatever it was. And that door. Could it really be..?
+Never heard such sounds in a dream before. And that door. Is something really down there?
 
 <<unity 'STORY' hideNightmareWorld "">>
 
 
 :: unlock basement
-Another class room!
+They told there was just a bit of old storage down here. This is much bigger than that.
 
-It's filthy. Everything covered in dust, but there's tracks too. Someone was just here. 
+<q>Look, kids, I'm not in the mood for pranks!"</q>
 
-"Look, kids, I'm not in the mood for pranks!"
-
-No... it's completely empty. And why are there no chairs for the children?
 
 <<unity 'STORY' goToBasement "">>
 <<unity 'STORY' startMovement "">>
@@ -525,27 +520,38 @@ And everything is just so different.
 [[I almost can't recognize the place.|remember nightmare3]]
 
 
-:: nightmare
-Huh?
+:: second4
+<q> And teach them how, after years of servitude, our good Lord blessed St. Nim! Fused his eyes, closed his mouth for all but breathing, his ears withered until his countenance was as smooth as a river rock!</q>
 
-What did...
+<q>Thus our Lord blessed St. Nim. And we should all be so lucky to be guided out of temptation by Him.</q>
 
-Shit! What time is it? I must have fallen asleep. But... why is it so dark? The lights are still on.
+<q>So, take your children down to the church next sunday. Come show them the stone of Nim! Let them meditate on his solitude as they touch the smooth marble and ponder the humble wisdom of his cold silence.</q>
 
-What's that sound? No... not a sound. More like a cool pull. It's under the floor, under... 
+I think that's quite enough of that.
 
-There's something I havent checked out yet.
+[[Try channel One|First]]
 
-<<unity 'STORY' showNightmareWorld "">>
+[[Turn it off|Off]]
+
+
+:: document reminder
+(something about the papers and the name Anne Baumann)
+
+
+:: essays4
+No. There doesn't seem to be anything dated after that application. 
+
+I have to keep looking. I mean... even if it isn't her, I need to be sure I put down the right parent name on the new student's papers.
+
+
+[[From the top...|nightmare]]
+
 
 
 :: the end
-<center>
-!The end.
+<h1>The end.</h1>
 
-!!Thanks for playing
-</center>
-
+Thanks for playing
 
 
 :: Input example
@@ -568,6 +574,20 @@ I swore I'd never return, but it's changed so much it almost feels like moving t
 
 
 [[It definitely made an impression on my dreams.|remember nightmare4]]
+
+
+:: nightmare
+Huh?
+
+What happened?
+
+Shit! What time is it? I must have fallen asleep. But... why is it so dark? The lights are still on, there must be something wrong with the power.
+
+What's that sound? No... not a sound. More like a cool pull. It's under the floor, under... 
+
+There's something I havent checked out yet.
+
+<<unity 'STORY' showNightmareWorld "">>
 
 
 :: Enter
@@ -614,15 +634,17 @@ There seems to be layers of older stuff behind it.
 
 
 :: basement end door
-(basement end door)
+There's a draft here and I can hear the wind. This door must lead back outside. I don't remember seing an entrance to the basement outside, though. But why would I pay attention to such a thing?
+
+It doesn't look like it's been opened in years.
 
 
 :: basement storage
-(basement storage)
+(basement storage, description, old room filled with old clothes and shoes, some of it sorted)
 
 
 :: basement class
-(basement class)
+(basement class, the door is locked, will open when player searches storage)
 
 
 :: tear down poster
@@ -638,7 +660,9 @@ Only some of the text is still readable...
 
 
 :: basement boxes
-(basement boxes)
+(basement boxes, find something creepy about the clothes and boxes, hears door open in the hall and someone rushing outside.)
+
+<<unity 'STORY' openSubClassroom "">>
 
 
 :: basement poster a

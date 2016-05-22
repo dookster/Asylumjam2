@@ -26,7 +26,7 @@ public class CarStory : MonoBehaviour {
 	public void enterSchool(){
 		Debug.Log("Enterschool");
 		ScreenFader.FadeToBlack();
-		Application.LoadLevelAsync("scene1");
-		//Application.LoadLevel("scene1");
+		//Application.LoadLevelAsync("scene1");
+		Application.LoadLevel("scene1");
 	}
 }

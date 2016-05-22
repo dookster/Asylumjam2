@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: da30ac678cd5e3142a832fdcb28b7875
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
     100002: Cube
@@ -30,6 +30,24 @@ ModelImporter:
     100048: blackboard_001
     100050: Cylinder
     100052: Cube_008
+    100054: Cube_010
+    100056: Cube_011
+    100058: doorcut_001
+    100060: frame_small_001
+    100062: table_002
+    100064: wall_002
+    100066: doorcut_002
+    100068: Plane
+    100070: wall_003
+    100072: window_cut
+    100074: doorcut_000
+    100076: doorcut_003
+    100078: frame_large_003
+    100080: frame_large_004
+    100082: frame_small_002
+    100084: wall_004
+    100086: wall_005
+    100088: wall_006
     400000: //RootNode
     400002: Cube
     400004: Cube_001
@@ -57,6 +75,24 @@ ModelImporter:
     400048: blackboard_001
     400050: Cylinder
     400052: Cube_008
+    400054: Cube_010
+    400056: Cube_011
+    400058: doorcut_001
+    400060: frame_small_001
+    400062: table_002
+    400064: wall_002
+    400066: doorcut_002
+    400068: Plane
+    400070: wall_003
+    400072: window_cut
+    400074: doorcut_000
+    400076: doorcut_003
+    400078: frame_large_003
+    400080: frame_large_004
+    400082: frame_small_002
+    400084: wall_004
+    400086: wall_005
+    400088: wall_006
     2300000: //RootNode
     2300002: Cube
     2300004: Cube_001
@@ -84,6 +120,24 @@ ModelImporter:
     2300048: blackboard_001
     2300050: Cylinder
     2300052: Cube_008
+    2300054: Cube_010
+    2300056: Cube_011
+    2300058: doorcut_001
+    2300060: frame_small_001
+    2300062: table_002
+    2300064: wall_002
+    2300066: doorcut_002
+    2300068: Plane
+    2300070: wall_003
+    2300072: window_cut
+    2300074: doorcut_000
+    2300076: doorcut_003
+    2300078: frame_large_003
+    2300080: frame_large_004
+    2300082: frame_small_002
+    2300084: wall_004
+    2300086: wall_005
+    2300088: wall_006
     3300000: //RootNode
     3300002: Cube
     3300004: Cube_001
@@ -111,6 +165,24 @@ ModelImporter:
     3300048: blackboard_001
     3300050: Cylinder
     3300052: Cube_008
+    3300054: Cube_010
+    3300056: Cube_011
+    3300058: doorcut_001
+    3300060: frame_small_001
+    3300062: table_002
+    3300064: wall_002
+    3300066: doorcut_002
+    3300068: Plane
+    3300070: wall_003
+    3300072: window_cut
+    3300074: doorcut_000
+    3300076: doorcut_003
+    3300078: frame_large_003
+    3300080: frame_large_004
+    3300082: frame_small_002
+    3300084: wall_004
+    3300086: wall_005
+    3300088: wall_006
     4300000: Cube
     4300002: Cube_001
     4300004: Cube_006
@@ -137,6 +209,24 @@ ModelImporter:
     4300046: blackboard_001
     4300048: Cylinder
     4300050: Cube_008
+    4300052: Cube_011
+    4300054: Cube_010
+    4300056: doorcut_001
+    4300058: frame_small_001
+    4300060: table_002
+    4300062: wall_002
+    4300064: doorcut_002
+    4300066: Plane
+    4300068: window_cut
+    4300070: wall_003
+    4300072: frame_small_002
+    4300074: frame_large_004
+    4300076: doorcut_003
+    4300078: frame_large_003
+    4300080: wall_006
+    4300082: wall_005
+    4300084: doorcut_000
+    4300086: wall_004
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -146,6 +236,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -153,9 +244,9 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations: []
@@ -179,24 +270,25 @@ ModelImporter:
     useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
   importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
